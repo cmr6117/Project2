@@ -236,7 +236,7 @@ h3.emptyMusic {
     margin-top: 18px;
 }
 
-h3.musicName {
+h3.musicQuestion {
     float:left;
     width: 200px;
     font-weight: bold;
@@ -244,7 +244,7 @@ h3.musicName {
     font-size: 1.5em;
 }
 
-h3.musicAge {
+h3.musicAnswer {
     float:right;
     text-align: left;
     width: 100px;

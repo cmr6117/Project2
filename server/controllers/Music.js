@@ -14,7 +14,7 @@ const makerPage = (req, res) => {
 
 const makeMusic = (req, res) => {
     if (!req.body.name || !req.body.age){
-        return res.status(400).json({ error: 'RAWR! Both name and age are required' });
+        return res.status(400).json({ error: 'No, no, no!  Both name and age are required' });
     }
     
     const musicData = {

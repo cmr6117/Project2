@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>DomoMaker</title>
+  <title>MusicMaker</title>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <link rel="shortcut icon" href="/assets/img/favicon.png"/>
   <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
@@ -10,32 +10,32 @@
   <nav><a href="/login"><img id="logo" src="/assets/img/face.png" alt="face logo"/></a>
     <div class="navlink"><a href="/logout">Log out</a></div>
   </nav>
-  <section id="makeDomo">
-    <form id="domoForm" name="domoForm" action="/maker" method="POST" class="domoForm">
+  <section id="makeMusic">
+    <form id="musicForm" name="musicForm" action="/maker" method="POST" class="musicForm">
       <label for="name">Name: </label>
-      <input id="domoName" type="text" name="name" placeholder="Domo Name"/>
+      <input id="musicName" type="text" name="name" placeholder="Music Name"/>
       <label for="age">Age: </label>
-      <input id="domoAge" type="text" name="age" placeholder="Domo Age"/>
+      <input id="musicAge" type="text" name="age" placeholder="Music Age"/>
       <input type="hidden" name="_csrf" value={{csrfToken}} />
-      <input class="makeDomoSubmit" type="submit" value="Make Domo" />
+      <input class="makeMusicSubmit" type="submit" value="Make Music" />
     </form>
   </section>
-  <section id="domos">
-    <div class="domo">
-        {{#if domos}}
-            {{#each domos}}
-                <div class="domo"><img src="/assets/img/domoface.jpeg" alt="domo face" class="domoFace" />
-                    <h3 class="domoName">Name: {{this.name}}</h3>
-                    <h3 class="domoAge">Age: {{this.age}}</h3>
+  <section id="musics">
+    <div class="music">
+        {{#if musics}}
+            {{#each musics}}
+                <div class="music"><img src="/assets/img/musicface.jpeg" alt="music face" class="musicFace" />
+                    <h3 class="musicName">Name: {{this.name}}</h3>
+                    <h3 class="musicAge">Age: {{this.age}}</h3>
                 </div>
             {{/each}}
         {{else}}
-            <h3 class="emptyDomo">No Domos yet</h3>
+            <h3 class="emptyMusic">No Musics yet</h3>
         {{/if}}
     </div>
   </section>
-  <div id="domoMessage"><img id="speech" src="/assets/img/speech.png" alt="speech box"/>
-    <h3><span id="errorMessage"></span></h3><img id="domo" src="assets/img/domo.png" alt="domo"/>
+  <div id="musicMessage"><img id="speech" src="/assets/img/speech.png" alt="speech box"/>
+    <h3><span id="errorMessage"></span></h3><img id="music" src="assets/img/music.png" alt="music"/>
   </div>
   <script src="/assets/bundle.js"></script>
 </body>

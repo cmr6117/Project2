@@ -1,43 +1,43 @@
 const models = require('../models');
-const Domo = models.Domo;
+const Music = models.Music;
 
 const makerPage = (req, res) => {
-    Domo.DomoModel.findByOwner(req.session.account._id, (err, docs) => {
+    Music.MusicModel.findByOwner(req.session.account._id, (err, docs) => {
         if (err) {
             console.log(err);
             return res.status(400).json({ error: 'An error occurred' });
         }
         
-        return res.render('app', { csrfToken: req.csrfToken(), domos: docs });
+        return res.render('app', { csrfToken: req.csrfToken(), musics: docs });
     });
 };
 
-const makeDomo = (req, res) => {
+const makeMusic = (req, res) => {
     if (!req.body.name || !req.body.age){
         return res.status(400).json({ error: 'RAWR! Both name and age are required' });
     }
     
-    const domoData = {
+    const musicData = {
         name: req.body.name,
         age: req.body.age,
         owner: req.session.account._id,
     }
     
-    const newDomo = new Domo.DomoModel(domoData);
+    const newMusic = new Music.MusicModel(musicData);
     
-    const domoPromise = newDomo.save();
+    const musicPromise = newMusic.save();
     
-    domoPromise.catch((err) => {
+    musicPromise.catch((err) => {
         console.log(err);
         if (err.code === 11000){
-            return res.status(400).json({ error: 'Domo already exists.' });
+            return res.status(400).json({ error: 'Music already exists.' });
         }
         
         return res.status(400).json({ error: 'An error occurred' });
     });    
     
-    return domoPromise;
+    return musicPromise;
 };
 
 module.exports.makerPage = makerPage;
-module.exports.make = makeDomo;
+module.exports.make = makeMusic;

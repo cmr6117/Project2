@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const _ = require('underscore');
 
-let DomoModel = {};
+let MusicModel = {};
 
 const convertId = mongoose.Types.ObjectId;
 const setName = (name) => _.escape(name).trim();
 
-const DomoSchema = new mongoose.Schema({
+const MusicSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -33,20 +33,20 @@ const DomoSchema = new mongoose.Schema({
     },
 });
 
-DomoSchema.statics.toAPI = (doc) => ({
+MusicSchema.statics.toAPI = (doc) => ({
     name: doc.name,
     age: doc.age,
 });
 
-DomoSchema.statics.findByOwner = (ownerId, callback) => {
+MusicSchema.statics.findByOwner = (ownerId, callback) => {
     const search = {
         owner: convertId(ownerId),
     };
     
-    return DomoModel.find(search).select('name age').exec(callback);
+    return MusicModel.find(search).select('name age').exec(callback);
 };
 
-DomoModel = mongoose.model('Domo', DomoSchema);
+MusicModel = mongoose.model('Music', MusicSchema);
 
-module.exports.DomoModel = DomoModel;
-module.exports.DomoSchema = DomoSchema;
+module.exports.MusicModel = MusicModel;
+module.exports.MusicSchema = MusicSchema;

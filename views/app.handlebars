@@ -12,10 +12,10 @@
   </nav>
   <section id="makeMusic">
     <form id="musicForm" name="musicForm" action="/maker" method="POST" class="musicForm">
-      <label for="name">Q: </label>
-      <input id="musicQuestion" type="text" name="question" placeholder="Question"/>
-      <label for="answer">A: </label>
-      <input id="musicAnswer" type="text" name="answer" placeholder="Answer"/>
+      <label for="name">Name: </label>
+      <input id="musicName" type="text" name="name" placeholder="Music Name"/>
+      <label for="age">Age: </label>
+      <input id="musicAge" type="text" name="age" placeholder="Music Age"/>
       <input type="hidden" name="_csrf" value={{csrfToken}} />
       <input class="makeMusicSubmit" type="submit" value="Make Music" />
     </form>
@@ -25,9 +25,9 @@
         {{#if musics}}
             {{#each musics}}
                 <div class="music">
-                    Question: <h3 class="musicQuestion">{{this.name}}</h3><br />
-                    Answer: <h3 class="musicAnswer">{{this.age}}</h3><br />
-                    Correct Answer: <h3 class="musicAnswer">{{this.age}}</h3>
+                    Question: <h3 class="musicName">{{this.name}}</h3><br />
+                    Answer: <h3 class="musicAge">{{this.age}}</h3><br />
+                    Correct Answer: <h3 class="musicAge">{{this.age}}</h3>
                 </div>
             {{/each}}
         {{else}}

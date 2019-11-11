@@ -32,12 +32,12 @@ $(document).ready(function () {
     $("#musicMessage").animate({ width: 'hide' }, 350);
 
     if ($("#user").val() == '' || $("#pass").val() == '' || $("#pass2").val() == '') {
-      handleError("All fields are required");
+      handleError("RAWR! All fields are required");
       return false;
     }
 
     if ($("#pass").val() !== $("#pass2").val()) {
-      handleError("No, no, no! Passwords do not match");
+      handleError("RAWR! Passwords do not match");
       return false;
     }
 
@@ -52,7 +52,7 @@ $(document).ready(function () {
     $("#musicMessage").animate({ width: 'hide' }, 350);
 
     if ($("#user").val() == '' || $("#pass").val() == '') {
-      handleError("No, no, no!  Username or password is empty");
+      handleError("RAWR! Username or password is empty");
       return false;
     }
 
@@ -66,8 +66,8 @@ $(document).ready(function () {
 
     $("#musicMessage").animate({ width: 'hide' }, 350);
 
-    if ($("#musicQuestion").val() == '' || $("#musicAnswer").val() == '') {
-      handleError("No, no, no!  All fields are required");
+    if ($("#musicName").val() == '' || $("#musicAge").val() == '') {
+      handleError("RAWR! All fields are required");
       return false;
     }
 

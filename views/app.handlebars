@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>MusicMaker</title>
+  <title>Music Quiz</title>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <link rel="shortcut icon" href="/assets/img/favicon.png"/>
   <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
@@ -24,9 +24,10 @@
     <div class="music">
         {{#if musics}}
             {{#each musics}}
-                <div class="music"><img src="/assets/img/musicface.jpeg" alt="music face" class="musicFace" />
-                    <h3 class="musicName">Name: {{this.name}}</h3>
-                    <h3 class="musicAge">Age: {{this.age}}</h3>
+                <div class="music">
+                    Question: <h3 class="musicName">{{this.name}}</h3>
+                    Answer: <h3 class="musicAge">{{this.age}}</h3>
+                    Correct Answer: <h3 class="musicAge">{{this.age}}</h3>
                 </div>
             {{/each}}
         {{else}}

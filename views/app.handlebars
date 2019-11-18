@@ -1,42 +1,27 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>Music Quiz</title>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <title>DomoMaker</title>
+  <script crossorigin src="https://unpkg.com/react@15/dist/react.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+  <script crossorigin src="https://unpkg.com/prop-types/prop-types.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.6.2/remarkable.min.js"></script>
   <link rel="shortcut icon" href="/assets/img/favicon.png"/>
   <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
 </head>
 <body>
   <nav><a href="/login"><img id="logo" src="/assets/img/face.png" alt="face logo"/></a>
+    <div class="navlink"><a href="/about">About</a></div> 
     <div class="navlink"><a href="/logout">Log out</a></div>
   </nav>
-  <section id="makeMusic">
-    <form id="musicForm" name="musicForm" action="/maker" method="POST" class="musicForm">
-      <label for="name">Name: </label>
-      <input id="musicName" type="text" name="name" placeholder="Music Name"/>
-      <label for="age">Age: </label>
-      <input id="musicAge" type="text" name="age" placeholder="Music Age"/>
-      <input type="hidden" name="_csrf" value={{csrfToken}} />
-      <input class="makeMusicSubmit" type="submit" value="Make Music" />
-    </form>
+  <section id="makeDomo">
   </section>
-  <section id="musics">
-    <div class="music">
-        {{#if musics}}
-            {{#each musics}}
-                <div class="music">
-                    Question: <!--<h3 class="musicName">{{this.name}}</h3>--><br />
-                    Answer: <!--<h3 class="musicAge">{{this.age}}</h3>--><br />
-                    Correct Answer: <!--<h3 class="musicAge">{{this.age}}</h3>-->
-                </div>
-            {{/each}}
-        {{else}}
-            <h3 class="emptyMusic">No quiz questions answered.</h3>
-        {{/if}}
-    </div>
+  <section id="domos">
   </section>
-  <div id="musicMessage"><img id="speech" src="/assets/img/speech.png" alt="speech box"/>
-    <h3><span id="errorMessage"></span></h3><img id="music" src="assets/img/music.png" alt="music"/>
+  <div id="domoMessage"><img id="speech" src="/assets/img/speech.png" alt="speech box"/>
+    <h3><span id="errorMessage"></span></h3><img id="domo" src="assets/img/domo.png" alt="domo"/>
   </div>
   <script src="/assets/bundle.js"></script>
 </body>

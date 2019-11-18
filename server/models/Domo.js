@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const _ = require('underscore');
 
-let DomoModel = {};
+let ArtistModel = {};
 
 const convertId = mongoose.Types.ObjectId;
 const setName = (name) => _.escape(name).trim();
 
-const DomoSchema = new mongoose.Schema({
+const ArtistSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -39,21 +39,21 @@ const DomoSchema = new mongoose.Schema({
     },
 });
 
-DomoSchema.statics.toAPI = (doc) => ({
+ArtistSchema.statics.toAPI = (doc) => ({
     name: doc.name,
     age: doc.age,
     level: doc.level,
 });
 
-DomoSchema.statics.findByOwner = (ownerId, callback) => {
+ArtistSchema.statics.findByOwner = (ownerId, callback) => {
     const search = {
         owner: convertId(ownerId),
     };
     
-    return DomoModel.find(search).select('name age level').exec(callback);
+    return ArtistModel.find(search).select('name age level').exec(callback);
 };
 
-DomoModel = mongoose.model('Domo', DomoSchema);
+ArtistModel = mongoose.model('Artist', ArtistSchema);
 
-module.exports.DomoModel = DomoModel;
-module.exports.DomoSchema = DomoSchema;
+module.exports.ArtistModel = ArtistModel;
+module.exports.ArtistSchema = ArtistSchema;

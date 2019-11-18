@@ -1,93 +1,93 @@
 "use strict";
 
-var handleDomo = function handleDomo(e) {
+var handleArtist = function handleArtist(e) {
     e.preventDefault();
 
-    $("#domoMessage").animate({ width: 'hide' }, 350);
+    $("#artistMessage").animate({ width: 'hide' }, 350);
 
-    if ($("#domoName").val() == '' || $("#domoAge").val() == '') {
+    if ($("#artistName").val() == '' || $("#artistAge").val() == '') {
         handleError("RAWR! All fields are required");
         return false;
     }
 
-    console.dir('handledomo');
-    sendAjax('POST', $("#domoForm").attr("action"), $("#domoForm").serialize(), function () {
-        loadDomosFromServer();
+    console.dir('handleartist');
+    sendAjax('POST', $("#artistForm").attr("action"), $("#artistForm").serialize(), function () {
+        loadArtistsFromServer();
     });
 
     return false;
 };
 
-var DomoForm = function DomoForm(props) {
+var ArtistForm = function ArtistForm(props) {
     return React.createElement(
         "form",
-        { id: "domoForm",
-            onSubmit: handleDomo,
-            name: "domoForm",
+        { id: "artistForm",
+            onSubmit: handleArtist,
+            name: "artistForm",
             action: "/maker",
             method: "POST",
-            className: "domoForm"
+            className: "artistForm"
         },
         React.createElement(
             "label",
             { htmlFor: "name" },
             "Name: "
         ),
-        React.createElement("input", { id: "domoName", type: "text", name: "name", placeholder: "Domo Name" }),
+        React.createElement("input", { id: "artistName", type: "text", name: "name", placeholder: "Artist Name" }),
         React.createElement(
             "label",
             { htmlFor: "age" },
             "Age: "
         ),
-        React.createElement("input", { id: "domoAge", type: "text", name: "age", placeholder: "Domo Age" }),
+        React.createElement("input", { id: "artistAge", type: "text", name: "age", placeholder: "Artist Age" }),
         React.createElement(
             "label",
             { htmlFor: "level" },
             "Level: "
         ),
-        React.createElement("input", { id: "domoLevel", type: "text", name: "level", placeholder: "Domo Level" }),
+        React.createElement("input", { id: "artistLevel", type: "text", name: "level", placeholder: "Artist Level" }),
         React.createElement("input", { type: "hidden", name: "_csrf", value: props.csrf }),
-        React.createElement("input", { className: "makeDomoSubmit", type: "submit", value: "Make Domo" })
+        React.createElement("input", { className: "makeArtistSubmit", type: "submit", value: "Make Artist" })
     );
 };
 
-var DomoList = function DomoList(props) {
-    if (props.domos.length === 0) {
+var ArtistList = function ArtistList(props) {
+    if (props.artists.length === 0) {
         return React.createElement(
             "div",
-            { className: "domoList" },
+            { className: "artistList" },
             React.createElement(
                 "h3",
-                { className: "emptyDomo" },
-                "No domos yet"
+                { className: "emptyArtist" },
+                "No artists yet"
             )
         );
     }
 
-    var domoNodes = props.domos.map(function (domo) {
+    var artistNodes = props.artists.map(function (artist) {
         return React.createElement(
             "div",
-            { key: domo._id, className: "domo" },
-            React.createElement("img", { src: "/assets/img/domoface.jpeg", alt: "domo face", className: "domoFace" }),
+            { key: artist._id, className: "artist" },
+            React.createElement("img", { src: "/assets/img/artistface.jpeg", alt: "artist face", className: "artistFace" }),
             React.createElement(
                 "h3",
-                { className: "domoName" },
+                { className: "artistName" },
                 " Name: ",
-                domo.name,
+                artist.name,
                 " "
             ),
             React.createElement(
                 "h3",
-                { className: "domoAge" },
+                { className: "artistAge" },
                 " Age: ",
-                domo.age,
+                artist.age,
                 " "
             ),
             React.createElement(
                 "h3",
-                { className: "domoLevel" },
+                { className: "artistLevel" },
                 " Level: ",
-                domo.level,
+                artist.level,
                 " "
             )
         );
@@ -95,24 +95,24 @@ var DomoList = function DomoList(props) {
 
     return React.createElement(
         "div",
-        { className: "domoList" },
-        domoNodes
+        { className: "artistList" },
+        artistNodes
     );
 };
 
-var loadDomosFromServer = function loadDomosFromServer() {
-    sendAjax('GET', '/getDomos', null, function (data) {
+var loadArtistsFromServer = function loadArtistsFromServer() {
+    sendAjax('GET', '/getArtists', null, function (data) {
         console.dir('loading');
-        ReactDOM.render(React.createElement(DomoList, { domos: data.domos }), document.querySelector("#domos"));
+        ReactDOM.render(React.createElement(ArtistList, { artists: data.artists }), document.querySelector("#artists"));
     });
 };
 
 var setup = function setup(csrf) {
-    ReactDOM.render(React.createElement(DomoForm, { csrf: csrf }), document.querySelector("#makeDomo"));
+    ReactDOM.render(React.createElement(ArtistForm, { csrf: csrf }), document.querySelector("#makeArtist"));
 
-    ReactDOM.render(React.createElement(DomoForm, { domos: [] }), document.querySelector("#domos"));
+    ReactDOM.render(React.createElement(ArtistForm, { artists: [] }), document.querySelector("#artists"));
 
-    loadDomosFromServer();
+    loadArtistsFromServer();
 };
 
 var getToken = function getToken() {
@@ -128,11 +128,11 @@ $(document).ready(function () {
 
 var handleError = function handleError(message) {
     $("#errorMessage").text(message);
-    $("#domoMessage").animate({ width: 'toggle' }, 350);
+    $("#artistMessage").animate({ width: 'toggle' }, 350);
 };
 
 var redirect = function redirect(response) {
-    $("domoMessage").animate({ width: 'hide' }, 350);
+    $("artistMessage").animate({ width: 'hide' }, 350);
     window.location = response.redirect;
 };
 

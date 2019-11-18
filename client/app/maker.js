@@ -1,87 +1,87 @@
-const handleDomo = (e) => {
+const handleArtist = (e) => {
     e.preventDefault();
     
-    $("#domoMessage").animate({width:'hide'},350);
+    $("#artistMessage").animate({width:'hide'},350);
     
-    if($("#domoName").val() == '' || $("#domoAge").val() == '' || $("#domoLevel").val() == ''){
+    if($("#artistName").val() == '' || $("#artistAge").val() == '' || $("#artistLevel").val() == ''){
         handleError("RAWR! All fields are required");
         return false;
     }
   
-    sendAjax('POST', $("#domoForm").attr("action"), $("#domoForm").serialize(), () => {
-        loadDomosFromServer();
+    sendAjax('POST', $("#artistForm").attr("action"), $("#artistForm").serialize(), () => {
+        loadArtistsFromServer();
     });
     
     return false;
 };
 
-const DomoForm = (props) => {
+const ArtistForm = (props) => {
     return (
-        <form id="domoForm"
-            onSubmit={handleDomo}
-            name="domoForm"
+        <form id="artistForm"
+            onSubmit={handleArtist}
+            name="artistForm"
             action="/maker"
             method="POST"
-            className="domoForm"
+            className="artistForm"
         >
             <label htmlFor="name">Name: </label>
-            <input id="domoName" type="text" name="name" placeholder="Domo Name"/>
+            <input id="artistName" type="text" name="name" placeholder="Artist Name"/>
             <label htmlFor="age">Age: </label>
-            <input id="domoAge" type="text" name="age" placeholder="Domo Age"/>
+            <input id="artistAge" type="text" name="age" placeholder="Artist Age"/>
             <label htmlFor="level">Level: </label>
-            <input id="domoLevel" type="text" name="level" placeholder="Domo Level"/>
+            <input id="artistLevel" type="text" name="level" placeholder="Artist Level"/>
             <input type="hidden" name="_csrf" value={props.csrf} />
-            <input className="makeDomoSubmit" type="submit" value="Make Domo" />
+            <input className="makeArtistSubmit" type="submit" value="Make Artist" />
         </form>
     );
 };
 
-const DomoList = function(props) {
-    if(props.domos.length === 0) {
+const ArtistList = function(props) {
+    if(props.artists.length === 0) {
         return (
-            <div className="domoList">
-                <h3 className="emptyDomo">No domos yet</h3>
+            <div className="artistList">
+                <h3 className="emptyArtist">No artists yet</h3>
             </div>
         );
     }
     
-    const domoNodes = props.domos.map(function(domo) {
+    const artistNodes = props.artists.map(function(artist) {
         return (
-            <div key={domo._id} className="domo">
-                <img src="/assets/img/domoface.jpeg" alt="domo face" className="domoFace" />
-                <h3 className="domoName"> Name: {domo.name} </h3>
-                <h3 className="domoAge"> Age: {domo.age} </h3>
-                <h3 className="domoLevel"> Level: {domo.level} </h3>
+            <div key={artist._id} className="artist">
+                <img src="/assets/img/artistface.jpeg" alt="artist face" className="artistFace" />
+                <h3 className="artistName"> Name: {artist.name} </h3>
+                <h3 className="artistAge"> Age: {artist.age} </h3>
+                <h3 className="artistLevel"> Level: {artist.level} </h3>
             </div>
         );
     });
     
     return (
-        <div className="domoList">
-            {domoNodes}
+        <div className="artistList">
+            {artistNodes}
         </div>
     );
 };
 
-const loadDomosFromServer = () => {
-    sendAjax('GET', '/getDomos', null, (data) => {
+const loadArtistsFromServer = () => {
+    sendAjax('GET', '/getArtists', null, (data) => {
       console.dir('loading');
         ReactDOM.render(
-            <DomoList domos={data.domos} />, document.querySelector("#domos")
+            <ArtistList artists={data.artists} />, document.querySelector("#artists")
         );
     });
 };
 
 const setup = function(csrf) {
     ReactDOM.render(
-        <DomoForm csrf={csrf} />, document.querySelector("#makeDomo")
+        <ArtistForm csrf={csrf} />, document.querySelector("#makeArtist")
     );
 
     ReactDOM.render(
-        <DomoForm domos={[]} />, document.querySelector("#domos")
+        <ArtistForm artists={[]} />, document.querySelector("#artists")
     );
 
-    loadDomosFromServer();
+    loadArtistsFromServer();
 };
 
 const getToken = () => {

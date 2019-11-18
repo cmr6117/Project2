@@ -222,31 +222,6 @@ nav:nth-child(1) {
     background-color: #66bfff;
 }
 
-h3.emptyArtist {
-    width: 400px;
-    font-size: 1.5em;
-    margin: 0 auto;
-    text-align: center;
-    margin-top: 18px;
-}
-
-h3.artistName {
-    float:left;
-    width: 200px;
-    font-weight: bold;
-    padding-left: 65px;
-    font-size: 1.5em;
-}
-
-h3.artistAge, h3.artistLevel {
-    float:right;
-    text-align: left;
-    width: 100px;
-    font-weight: bold;
-    padding-right: 40px;
-    font-size: 1.5em;
-}
-
 .artist:first-child {
     margin-top: 10px;
 }

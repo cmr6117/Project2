@@ -85,7 +85,10 @@ const signup = (request, response) => {
 const changePass = (request, response) => {
     const req = request;
     const res = response;
-    
+
+    const username = `${req.body.username}`;
+    const password = `${req.body.pass}`;
+
     req.body.username = `${req.body.username}`;
     req.body.pass = `${req.body.pass}`;
     req.body.pass2 = `${req.body.pass2}`;

@@ -48,7 +48,6 @@ const ArtistList = function(props) {
     const artistNodes = props.artists.map(function(artist) {
         return (
             <div key={artist._id} className="artist">
-                <img src="/assets/img/artistface.jpeg" alt="artist face" className="artistFace" />
                 <h3 className="artistName"> Name: {artist.name} </h3>
                 <h3 className="artistAge"> Age: {artist.age} </h3>
                 <h3 className="artistLevel"> Level: {artist.level} </h3>

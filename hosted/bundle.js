@@ -68,7 +68,6 @@ var ArtistList = function ArtistList(props) {
         return React.createElement(
             "div",
             { key: artist._id, className: "artist" },
-            React.createElement("img", { src: "/assets/img/artistface.jpeg", alt: "artist face", className: "artistFace" }),
             React.createElement(
                 "h3",
                 { className: "artistName" },

@@ -81,6 +81,61 @@ const signup = (request, response) => {
     });
 };
 
+
+const changePass = (request, response) => {
+    const req = request;
+    const res = response;
+    
+    req.body.username = `${req.body.username}`;
+    req.body.pass = `${req.body.pass}`;
+    req.body.pass2 = `${req.body.pass2}`;
+    req.body.oldPass = `${req.body.oldPass}`;
+    
+    if (!req.body.username || !req.body.pass || !req.body.pass2 || !req.body.oldPass){
+        return res.status(400).json({ error: 'RAWR! All fields are required' });
+    }
+    
+    if (req.body.pass !== req.body.pass2){
+        return res.status(400).json({ error: 'RAWR! Passwords do not match' });
+    }
+    
+    return Account.AccountModel.authenticate(username, password, (err, account) => {
+        if (err || !account){
+            return res.status(401).json({ error: 'Wrong username or password' });
+        }
+        
+        req.session.account = Account.AccountModel.toAPI(account);
+        
+        return Account.AccountModel.generateHash(req.body.pass, (salt, hash) => {
+            const accountData = {
+                username: req.body.username,
+                salt,
+                password: hash,
+            };
+
+            const newAccount = new Account.AccountModel(accountData);
+
+            const savePromise = newAccount.save();
+
+            savePromise.then(() => {
+                req.session.account = Account.AccountModel.toAPI(newAccount);
+                return res.json({ redirect: '/maker' });
+            })
+
+            savePromise.catch((err) => {
+                console.log(err);
+
+                if (err.code === 11000) {
+                    return res.status(400).json({ error: 'Username already in use.'});
+                }
+
+                return res.status(400).json({ error: 'An error ocurred' });
+            });
+        });
+    });
+    
+};
+
 const getToken = (request, response) => {
     const req = request;
     const res = response;
@@ -95,6 +150,7 @@ const getToken = (request, response) => {
 module.exports.loginPage = loginPage;
 module.exports.login = login;
 module.exports.logout = logout;
+module.exports.changePass = changePass;
 module.exports.about = about;
 module.exports.signup = signup;
 module.exports.getToken = getToken;

@@ -5,6 +5,9 @@ html, body {
     padding: 0;
     overflow-x: hidden;
     background-image: url(img/starrysky.jpg);
+    background-size: 100%;
+    background-color: black;
+    background-repeat: no-repeat;
 }
 
 #logo {

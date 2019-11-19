@@ -3,7 +3,7 @@ const handleArtist = (e) => {
     
     $("#artistMessage").animate({width:'hide'},350);
     
-    if($("#artistName").val() == '' || $("#artistAge").val() == '' || $("#artistLevel").val() == ''){
+    if($("#artistSubmitType").val() == '' || $("#artistSubmitValue").val() == '' || $("#artistAdditionalValue").val() == ''){
         handleError("RAWR! All fields are required");
         return false;
     }
@@ -24,12 +24,12 @@ const ArtistForm = (props) => {
             method="POST"
             className="artistForm"
         >
-            <label htmlFor="name">Name: </label>
-            <input id="artistName" type="text" name="name" placeholder="Artist Name"/>
-            <label htmlFor="age">Age: </label>
-            <input id="artistAge" type="text" name="age" placeholder="Artist Age"/>
-            <label htmlFor="level">Level: </label>
-            <input id="artistLevel" type="text" name="level" placeholder="Artist Level"/>
+            <label htmlFor="name">Submission Type: </label>
+            <input id="artistSubmitType" type="text" name="name" placeholder="Submission Type"/>
+            <label htmlFor="age">Submission Value: </label>
+            <input id="artistSubmitValue" type="text" name="age" placeholder="Submission Value"/>
+            <label htmlFor="level">Additional Values: </label>
+            <input id="artistAdditionalValue" type="text" name="level" placeholder="Additional Values"/>
             <input type="hidden" name="_csrf" value={props.csrf} />
             <input className="makeArtistSubmit" type="submit" value="Make Artist" />
         </form>
@@ -54,20 +54,20 @@ const ArtistList = function(props) {
                 method="POST"
                 className="artistForm"
             >
-                <label htmlFor="name">Name: </label>
-                <input id="artistName" type="text" name="name" placeholder="Artist Name" value={artist.name} />
-                <label htmlFor="age">Age: </label>
-                <input id="artistAge" type="text" name="age" placeholder="Artist Age" />
-                <label htmlFor="level">Level: </label>
-                <input id="artistLevel" type="text" name="level" placeholder="Artist Level" />
+                <label htmlFor="name">Submission Type: </label>
+                <input id="artistSubmitType{artist.name}" type="text" name="name" placeholder="Submission Type" value={artist.name} />
+                <label htmlFor="age">Submission Value: </label>
+                <input id="artistSubmitValue{artist.name}" type="text" name="age" placeholder="Submission Value" value={artist.age} />
+                <label htmlFor="level">Additional Values: </label>
+                <input id="artistAdditionalValue{artist.name}" type="text" name="level" placeholder="Additional Values" value={artist.level} />
                 <input type="hidden" name="_csrf" value={props.csrf} />
                 <input className="makeArtistSubmit" type="submit" value="Make Artist" />
             </form>
             /*
             <div key={artist._id} className="artist">
-                <h3 className="artistName"> Name: {artist.name} </h3>
-                <h3 className="artistAge"> Age: {artist.age} </h3>
-                <h3 className="artistLevel"> Level: {artist.level} </h3>
+                <h3 className="artistSubmitType"> Name: {artist.name} </h3>
+                <h3 className="artistSubmitValue"> Age: {artist.age} </h3>
+                <h3 className="artistAdditionalValue"> Level: {artist.level} </h3>
             </div>
             */
         );

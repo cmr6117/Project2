@@ -122,7 +122,7 @@ var ChangePassWindow = function ChangePassWindow(props) {
         "form",
         { id: "changePassForm",
             name: "changePassForm",
-            onSubmit: handleSignup,
+            onSubmit: handleChangePass,
             action: "/changePass",
             method: "POST",
             className: "mainForm"
@@ -171,7 +171,7 @@ var createChangePassWindow = function createChangePassWindow(csrf) {
 var setup = function setup(csrf) {
     var loginButton = document.querySelector("#loginButton");
     var signupButton = document.querySelector("#signupButton");
-    var changePassButton = document.querySelector("#changePass Button");
+    var changePassButton = document.querySelector("#changePassButton");
 
     signupButton.addEventListener("click", function (e) {
         e.preventDefault();

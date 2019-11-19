@@ -100,20 +100,24 @@ var SignupWindow = function SignupWindow(props) {
             "Username: "
         ),
         React.createElement("input", { id: "user", type: "text", name: "username", placeholder: "username" }),
+        React.createElement("br"),
         React.createElement(
             "label",
             { htmlFor: "pass" },
             "Password: "
         ),
         React.createElement("input", { id: "pass", type: "password", name: "pass", placeholder: "password" }),
+        React.createElement("br"),
         React.createElement(
             "label",
             { htmlFor: "pass2" },
             "Password: "
         ),
         React.createElement("input", { id: "pass2", type: "password", name: "pass2", placeholder: "retype password" }),
+        React.createElement("br"),
         React.createElement("input", { type: "hidden", name: "_csrf", value: props.csrf }),
         React.createElement("input", { className: "formSubmit", type: "submit", value: "Sign Up" })
+        React.createElement("br"),
     );
 };
 

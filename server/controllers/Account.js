@@ -124,16 +124,6 @@ const changePass = (request, response) => {
                 req.session.account = Account.AccountModel.toAPI(newAccount);
                 return res.json({ redirect: '/maker' });
             })
-
-            savePromise.catch((err) => {
-                console.log(err);
-
-                if (err.code === 11000) {
-                    return res.status(400).json({ error: 'Username already in use.'});
-                }
-
-                return res.status(400).json({ error: 'An error ocurred' });
-            });
         });
     });
     

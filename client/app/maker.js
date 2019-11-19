@@ -47,11 +47,29 @@ const ArtistList = function(props) {
     
     const artistNodes = props.artists.map(function(artist) {
         return (
+            <form id="artistForm"
+                onSubmit={handleArtist}
+                name="artistForm"
+                action="/maker"
+                method="POST"
+                className="artistForm"
+            >
+                <label htmlFor="name">Name: </label>
+                <input id="artistName" type="text" name="name" placeholder="Artist Name" value={artist.name} />
+                <label htmlFor="age">Age: </label>
+                <input id="artistAge" type="text" name="age" placeholder="Artist Age" />
+                <label htmlFor="level">Level: </label>
+                <input id="artistLevel" type="text" name="level" placeholder="Artist Level" />
+                <input type="hidden" name="_csrf" value={props.csrf} />
+                <input className="makeArtistSubmit" type="submit" value="Make Artist" />
+            </form>
+            /*
             <div key={artist._id} className="artist">
                 <h3 className="artistName"> Name: {artist.name} </h3>
                 <h3 className="artistAge"> Age: {artist.age} </h3>
                 <h3 className="artistLevel"> Level: {artist.level} </h3>
             </div>
+            */
         );
     });
     

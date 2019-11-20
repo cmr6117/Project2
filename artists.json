@@ -1,0 +1,616 @@
+[
+   {
+      "artist":"Weird Al Yankovic",
+      "songs":[
+         "Dare To Be Stupid",
+         "White & Nerdy",
+         "Amish Paradise",
+         "Party In The CIA",
+         "Word Crimes",
+         "Eat It",
+         "Smells Like Nirvana",
+         "Albuquerque",
+         "Wanna B Ur Lovr"
+      ]
+   },
+   {
+      "artist":"a-ha",
+      "songs":[
+         "Take On Me"
+      ]
+   },
+   {
+      "artist":"ABBA",
+      "songs":[
+         "Dancing Queen",
+         "Mamma Mia"
+      ]
+   },
+   {
+      "artist":"AC/DC",
+      "songs":[
+         "Back In Black",
+         "Ballbreaker",
+         "Dirty Deeds Done Dirt",
+         "T.N.T.",
+         "High Voltage",
+         "Highway to Hell",
+         "You Shook Me All Night Long",
+         "Thunderstruck",
+         "Hells Bells"
+      ]
+   },
+   {
+      "artist":"Adele",
+      "songs":[
+         "Rolling in the Deep",
+         "Set Fire to the Rain"
+      ]
+   },
+   {
+      "artist":"Aerosmith",
+      "songs":[
+         "Dude (Looks Like A Lady)",
+         "Walk This Way"
+      ]
+   },
+   {
+      "artist":"Billy Joel",
+      "songs":[
+         "Uptown Girl",
+         "Piano Man",
+         "We Didn't Start The Fire"
+      ]
+   },
+   {
+      "artist":"Bob Dylan",
+      "songs":[
+         "Knockin' On Heaven's Door",
+         "Blowin' In The Wind"
+      ]
+   },
+   {
+      "artist":"Bon Jovi",
+      "songs":[
+         "Who Says You Can't Go Home",
+         "Wanted Dead Or Alive",
+         "It's My Life",
+         "You Give Love A Bad Name",
+         "Livin' On A Prayer",
+         "Bad Medicine"
+      ]
+   },
+   {
+      "artist":"Bonnie Tyler",
+      "songs":[
+         "Holding Out For A Hero"
+      ]
+   },
+   {
+      "artist":"Bruce Springsteen",
+      "songs":[
+         "Dancing In the Dark",
+         "Born in the U.S.A."
+      ]
+   },
+   {
+      "artist":"Bryan Adams",
+      "songs":[
+         "Summer Of '69"
+      ]
+   },
+   {
+      "artist":"David Bowie",
+      "songs":[
+         "Scary Monsters (And Super Creeps)",
+         "Heroes",
+         "Rebel Rebel",
+         "Space Oddity",
+         "Starman",
+         "Life On Mars?"
+      ]
+   },
+   {
+      "artist":"Deep Purple",
+      "songs":[
+         "Highway Star",
+         "Smoke On The Water",
+         "Speed King"
+      ]
+   },
+   {
+      "artist":"Def Leppard",
+      "songs":[
+         "Pour Some Sugar On Me",
+         "Rock Of Ages"
+      ]
+   },
+   {
+      "artist":"Dio",
+      "songs":[
+         "Holy Diver",
+         "Rainbow In The Dark"
+      ]
+   },
+   {
+      "artist":"Dire Straits",
+      "songs":[
+         "Sultans Of Swing"
+      ]
+   },
+   {
+      "artist":"Dolly Parton",
+      "songs":[
+         "9 to 5",
+         "Jolene"
+      ]
+   },
+   {
+      "artist":"Don McLean",
+      "songs":[
+         "American Pie"
+      ]
+   },
+   {
+      "artist":"Earth, Wind, & Fire",
+      "songs":[
+         "September",
+         "Boogie Wonderland"
+      ]
+   },
+   {
+      "artist":"Electric Light Orchestra",
+      "songs":[
+         "Mr. Blue Sky"
+      ]
+   },
+   {
+      "artist":"Elton John",
+      "songs":[
+         "Rocket Man",
+         "Don't Go Breaking My Heart"
+      ]
+   },
+   {
+      "artist":"Elvis Presley",
+      "songs":[
+         "The Wonder Of You",
+         "King Creole",
+         "Can't Help Falling In Love",
+         "Jailhouse Rock",
+         "Suspicious Minds",
+         "Blue Christmas",
+         "Hound Dog",
+         "Blue Hawaii",
+         "Heartbreak Hotel",
+         "Burning Love"
+      ]
+   },
+   {
+      "artist":"Fleetwood Mac",
+      "songs":[
+         "The Chain",
+         "Monday Morning",
+         "Dreams",
+         "Tusk",
+         "Landslide",
+         "Go Your Own Way"
+      ]
+   },
+   {
+      "artist":"Green Day",
+      "songs":[
+         "Basket Case",
+         "American Idiot",
+         "Wake Me Up When September Ends",
+         "Holiday",
+         "21 Guns",
+         "Jesus Of Suburbia",
+         "Welcome To Paradise"
+      ]
+   },
+   {
+      "artist":"Hanson",
+      "songs":[
+         "MMBop"
+      ]
+   },
+   {
+      "artist":"Jamiroquai",
+      "songs":[
+         "Virtual Insanity"
+      ]
+   },
+   {
+      "artist":"John Denver",
+      "songs":[
+         "Take Me Home, Country Roads"
+      ]
+   },
+   {
+      "artist":"Journey",
+      "songs":[
+         "Don't Stop Believin'",
+         "Any Way You Want It"
+      ]
+   },
+   {
+      "artist":"Kansas",
+      "songs":[
+         "Carry on Wayward Son"
+      ]
+   },
+   {
+      "artist":"Katrina & The Waves",
+      "songs":[
+         "Walking On Sunshine"
+      ]
+   },
+   {
+      "artist":"King Crimson",
+      "songs":[
+         "21st Century Schizoid Man",
+         "The Court Of The Crimson King",
+         "Epitaph",
+         "Starless"
+      ]
+   },
+   {
+      "artist":"KISS",
+      "songs":[
+         "Rock And Roll All Nite",
+         "Heaven's On Fire"
+      ]
+   },
+   {
+      "artist":"Lady Gaga",
+      "songs":[
+         "Born This Way",
+         "Bad Romance",
+         "Just Dance",
+         "Paparazzi",
+         "Poker Face"
+      ]
+   },
+   {
+      "artist":"Led Zeppelin",
+      "songs":[
+         "Stairway To Heaven",
+         "Immigrant Song",
+         "Whole Lotta Love"
+      ]
+   },
+   {
+      "artist":"Madonna",
+      "songs":[
+         "Material Girl",
+         "Like a Virgin"
+      ]
+   },
+   {
+      "artist":"Metallica",
+      "songs":[
+         "Enter Sandman",
+         "Master Of Puppets",
+         "King Nothing"
+      ]
+   },
+   {
+      "artist":"Michael Jackson",
+      "songs":[
+         "Billie Jean",
+         "Beat It",
+         "Smooth Criminal",
+         "Thriller",
+         "Man In The Mirror",
+         "Rock With You"
+      ]
+   },
+   {
+      "artist":"Nat King Cole",
+      "songs":[
+         "L-O-V-E",
+         "Joy To The World"
+      ]
+   },
+   {
+      "artist":"Neil Diamond",
+      "songs":[
+         "Sweet Caroline"
+      ]
+   },
+   {
+      "artist":"Nirvana",
+      "songs":[
+         "Smells Like Teen Spirit"
+      ]
+   },
+   {
+      "artist":"Oasis",
+      "songs":[
+         "Wonderwall"
+      ]
+   },
+   {
+      "artist":"Pink Floyd",
+      "songs":[
+         "Another Brick in the Wall",
+         "Wish You Were Here",
+         "Comfortably Numb",
+         "Shine On You Crazy Diamond",
+         "The Great Gig In The Sky",
+         "Welcome To The Machine"
+      ]
+   },
+   {
+      "artist":"Prince",
+      "songs":[
+         "Purple Rain",
+         "Kiss",
+         "When Doves Cry",
+         "Raspberry Beret",
+         "1999",
+         "Endorphinmachine",
+         "Paisley Park",
+         "Soft and Wet",
+         "P. Control",
+         "Alphabet St.",
+         "Little Red Corvette",
+         "Paisley Park",
+         "I Wanna Be Your Lover"
+      ]
+   },
+   {
+      "artist":"PSY",
+      "songs":[
+         "Gangnam Style"
+      ]
+   },
+   {
+      "artist":"Queen",
+      "songs":[
+         "Princes Of The Universe",
+         "Don't Stop Me Now",
+         "Made In Heaven",
+         "Sheer Heart Attack",
+         "Killer Queen",
+         "Another One Bites The Dust",
+         "Bohemian Rhapsody",
+         "We Will Rock You",
+         "Somebody To Love",
+         "Radio Gaga",
+         "We Are The Champions",
+         "Fat Bottomed Girls",
+         "Bicycle Race"
+      ]
+   },
+   {
+      "artist":"Rick Springfield",
+      "songs":[
+         "Jessie's Girl"
+      ]
+   },
+   {
+      "artist":"Ricky Martin",
+      "songs":[
+         "Livin' la Vida Loca"
+      ]
+   },
+   {
+      "artist":"Savage Garden",
+      "songs":[
+         "I Want You"
+      ]
+   },
+   {
+      "artist":"Simon & Garfunkel",
+      "songs":[
+         "Mrs. Robinson",
+         "The Sound Of Silence",
+         "I Am A Rock"
+      ]
+   },
+   {
+      "artist":"Smash Mouth",
+      "songs":[
+         "All Star"
+      ]
+   },
+   {
+      "artist":"Starship",
+      "songs":[
+         "We Built This City"
+      ]
+   },
+   {
+      "artist":"Stevie Wonder",
+      "songs":[
+         "Superstition"
+      ]
+   },
+   {
+      "artist":"Survivor",
+      "songs":[
+         "Eye Of The Tiger"
+      ]
+   },
+   {
+      "artist":"Suzanne Vega",
+      "songs":[
+         "Luka",
+         "Tom's Diner"
+      ]
+   },
+   {
+      "artist":"Talking Heads",
+      "songs":[
+         "Psycho Killer",
+         "Burning Down The House"
+      ]
+   },
+   {
+      "artist":"Tears For Fears",
+      "songs":[
+         "Everybody Wants To Rule The World"
+      ]
+   },
+   {
+      "artist":"The Bangles",
+      "songs":[
+         "Walk Like An Egyptian"
+      ]
+   },
+   {
+      "artist":"The Beach Boys",
+      "songs":[
+         "Wouldn't It Be Nice",
+         "Surfin' U.S.A.",
+         "Fun Fun Fun"
+      ]
+   },
+   {
+      "artist":"The Beatles",
+      "songs":[
+         "Here Comes The Sun",
+         "Let It Be",
+         "Come Together",
+         "Hey Jude",
+         "Ob-La-Di, Ob-La-Da",
+         "Twist And Shout",
+         "Lucy In The Sky With Diamonds",
+         "While My Guitar Gently Weeps",
+         "A Hard Day's Night",
+         "Ticket To Ride",
+         "Yellow Submarine"
+      ]
+   },
+   {
+      "artist":"The Buggles",
+      "songs":[
+         "Video Killed The Radio Star"
+      ]
+   },
+   {
+      "artist":"The Clash",
+      "songs":[
+         "Rock The Casbah",
+         "Should I Stay Or Should I Go"
+      ]
+   },
+   {
+      "artist":"The Cure",
+      "songs":[
+         "Friday I'm in Love"
+      ]
+   },
+   {
+      "artist":"The Goo Goo Dolls",
+      "songs":[
+         "Iris",
+         "Slide"
+      ]
+   },
+   {
+      "artist":"The Killers",
+      "songs":[
+         "Mr. Brightside"
+      ]
+   },
+   {
+      "artist":"The Monkees",
+      "songs":[
+         "Daydream Believer"
+      ]
+   },
+   {
+      "artist":"The Moody Blues",
+      "songs":[
+         "Nights In White Satin"
+      ]
+   },
+   {
+      "artist":"The O'Jays",
+      "songs":[
+         "Love Train"
+      ]
+   },
+   {
+      "artist":"The Proclaimers",
+      "songs":[
+         "I'm Gonna Be (500 Miles)"
+      ]
+   },
+   {
+      "artist":"The Rolling Stones",
+      "songs":[
+         "Paint It, Black",
+         "(I Can't Get No) Satisfaction",
+         "Sympathy For The Devil",
+         "Jumpin' Jack Flash",
+         "Brown Sugar"
+      ]
+   },
+   {
+      "artist":"The Weather Girls",
+      "songs":[
+         "It's Raining Men"
+      ]
+   },
+   {
+      "artist":"Tom Petty",
+      "songs":[
+         "Free Fallin'"
+      ]
+   },
+   {
+      "artist":"TOTO",
+      "songs":[
+         "Africa"
+      ]
+   },
+   {
+      "artist":"Train",
+      "songs":[
+         "Hey, Soul Sister"
+      ]
+   },
+   {
+      "artist":"Village People",
+      "songs":[
+         "YMCA"
+      ]
+   },
+   {
+      "artist":"Was (Not Was)",
+      "songs":[
+         "Walk The Dinosaur"
+      ]
+   },
+   {
+      "artist":"Wham!",
+      "songs":[
+         "Wake Me up Before You Go-Go",
+         "Last Christmas"
+      ]
+   },
+   {
+      "artist":"Whitesnake",
+      "songs":[
+         "Here I Go Again"
+      ]
+   },
+   {
+      "artist":"Whitney Houston",
+      "songs":[
+         "I Wanna Dance With Somebody",
+         "I Will Always Love You"
+      ]
+   },
+   {
+      "artist":"Yes",
+      "songs":[
+         "Owner of a Lonely Heart",
+         "Roundabout"
+      ]
+   }
+]

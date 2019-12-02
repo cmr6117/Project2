@@ -136,13 +136,13 @@ const changePass = (request, response) => {
     return Account.AccountModel.generateHash(req.body.pass, (salt, hash) => {
       let updateAccount = account;
 
-      account.salt = salt;
-      account.password = hash;
+      updateAccount.salt = salt;
+      updateAccount.password = hash;
 
       const savePromise = updateAccount.save();
 
       savePromise.then(() => {
-        req.session.account = Account.AccountModel.toAPI(newAccount);
+        req.session.account = Account.AccountModel.toAPI(updateAccount);
         return res.json({
           redirect: '/maker'
         });

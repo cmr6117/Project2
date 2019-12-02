@@ -1,8 +1,8 @@
-const fs = require('fs');
+//const fs = require('fs');
 const models = require('../models');
 const Artist = models.Artist;
 
-let fileData = require('./artists.json');
+//let fileData = require('./artists.json');
 
 /*
 let questionData = {

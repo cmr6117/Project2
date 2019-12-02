@@ -113,7 +113,7 @@ const ChangePassWindow = (props) => {
         <label htmlFor="pass2">Password: </label>
         <input id="pass2" type="password" name="pass2" placeholder="retype password"/><br />
         <label htmlFor="oldpass">Old Password: </label>
-        <input id="oldpass" type="password" name="oldpass" placeholder="old password"/><br />
+        <input id="oldpass" type="password" name="oldPass" placeholder="old password"/><br />
         <input type="hidden" name="_csrf" value={props.csrf}/>
         <input className="formSubmit" type="submit" value="Sign Up" />
         </form>

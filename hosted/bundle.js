@@ -5,12 +5,11 @@ var handleArtist = function handleArtist(e) {
 
     $("#artistMessage").animate({ width: 'hide' }, 350);
 
-    if ($("#artistSubmitType").val() == '' || $("#artistSubmitValue").val() == '') {
+    if ($("#artistSubmitType").val() == '' || $("#artistSubmitValue").val() == '' || $("#artistAdditionalValue").val() == '') {
         handleError("RAWR! All fields are required");
         return false;
     }
 
-    console.dir('handleartist');
     sendAjax('POST', $("#artistForm").attr("action"), $("#artistForm").serialize(), function () {
         loadArtistsFromServer();
     });
@@ -31,21 +30,21 @@ var ArtistForm = function ArtistForm(props) {
         React.createElement(
             "label",
             { htmlFor: "name" },
-            "Name: "
+            "Submission Type: "
         ),
-        React.createElement("input", { id: "artistSubmitType", type: "text", name: "name", placeholder: "Artist Name" }),
+        React.createElement("input", { id: "artistSubmitType", type: "text", name: "name", placeholder: "Submission Type" }),
         React.createElement(
             "label",
             { htmlFor: "age" },
-            "Age: "
+            "Submission Value: "
         ),
-        React.createElement("input", { id: "artistSubmitValue", type: "text", name: "age", placeholder: "Artist Age" }),
+        React.createElement("input", { id: "artistSubmitValue", type: "text", name: "age", placeholder: "Submission Value" }),
         React.createElement(
             "label",
             { htmlFor: "level" },
-            "Level: "
+            "Additional Values: "
         ),
-        React.createElement("input", { id: "artistAdditionalValue", type: "text", name: "level", placeholder: "Artist Level" }),
+        React.createElement("input", { id: "artistAdditionalValue", type: "text", name: "level", placeholder: "Additional Values" }),
         React.createElement("input", { type: "hidden", name: "_csrf", value: props.csrf }),
         React.createElement("input", { className: "makeArtistSubmit", type: "submit", value: "Make Artist" })
     );
@@ -66,30 +65,43 @@ var ArtistList = function ArtistList(props) {
 
     var artistNodes = props.artists.map(function (artist) {
         return React.createElement(
-            "div",
-            { key: artist._id, className: "artist" },
+            "form",
+            { id: "artistForm",
+                onSubmit: handleArtist,
+                name: "artistForm",
+                action: "/maker",
+                method: "POST",
+                className: "artistForm"
+            },
             React.createElement(
-                "h3",
-                { className: "artistSubmitType" },
-                " Name: ",
-                artist.name,
-                " "
+                "label",
+                { htmlFor: "name" },
+                "Submission Type: "
             ),
+            React.createElement("input", { id: "artistSubmitType{artist.name}", type: "text", name: "name", placeholder: "Submission Type", value: artist.name }),
             React.createElement(
-                "h3",
-                { className: "artistSubmitValue" },
-                " Age: ",
-                artist.age,
-                " "
+                "label",
+                { htmlFor: "age" },
+                "Submission Value: "
             ),
+            React.createElement("input", { id: "artistSubmitValue{artist.name}", type: "text", name: "age", placeholder: "Submission Value", value: artist.age }),
             React.createElement(
-                "h3",
-                { className: "artistAdditionalValue" },
-                " Level: ",
-                artist.level,
-                " "
-            )
-        );
+                "label",
+                { htmlFor: "level" },
+                "Additional Values: "
+            ),
+            React.createElement("input", { id: "artistAdditionalValue{artist.name}", type: "text", name: "level", placeholder: "Additional Values", value: artist.level }),
+            React.createElement("input", { type: "hidden", name: "_csrf", value: props.csrf }),
+            React.createElement("input", { className: "makeArtistSubmit", type: "submit", value: "Make Artist" })
+        )
+        /*
+        <div key={artist._id} className="artist">
+            <h3 className="artistSubmitType"> Name: {artist.name} </h3>
+            <h3 className="artistSubmitValue"> Age: {artist.age} </h3>
+            <h3 className="artistAdditionalValue"> Level: {artist.level} </h3>
+        </div>
+        */
+        ;
     });
 
     return React.createElement(

@@ -1,5 +1,17 @@
+const fs = require('fs');
 const models = require('../models');
 const Artist = models.Artist;
+
+let fileData = require('./artists.json');
+
+/*
+let questionData = {
+  possibleAnswers: ['a-ha', 'weird al', 'led zeppelin'],
+  actualAnswer: 'pink floyd',
+  song: 'Dogs'
+};
+*/
+
 
 const makerPage = (req, res) => {
     Artist.ArtistModel.findByOwner(req.session.account._id, (err, docs) => {

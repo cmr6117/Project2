@@ -69,8 +69,8 @@ const ArtistList = function(props) {
     });
     
     return (
-        {timer}
         <div className="artistList">
+            {timer}
             {artistNodes}
         </div>
     );

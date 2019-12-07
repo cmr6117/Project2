@@ -64,6 +64,10 @@ nav:nth-child(1) {
     border-top-right-radius: 4px;
 }
 
+.artistList {
+    background-color: aliceblue;
+}
+
 .artistForm label {
     display: inline-block;
     width: 75px;

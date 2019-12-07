@@ -82,6 +82,7 @@ const loadArtistsFromServer = () => {
         ReactDOM.render(
             <ArtistList artists={data.artists} />, document.querySelector("#artists")
         );
+      console.dir('finished loading');
     });
 };
 
@@ -110,7 +111,7 @@ const everySecond = () => {
 
 $(document).ready(function() {
     getToken();
-    setInterval(everySecond(), 1000);
+    setInterval(everySecond, 1000);
 });
 
 

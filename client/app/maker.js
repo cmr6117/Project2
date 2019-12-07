@@ -103,9 +103,14 @@ const getToken = () => {
     });
 };
 
+const everySecond = () => {
+    timer--;
+    loadArtistsFromServer();
+};
+
 $(document).ready(function() {
     getToken();
-    setInterval(function(){ timer--; }, 1000);
+    setInterval(everySecond(), 1000);
 });
 
 

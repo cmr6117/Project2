@@ -109,6 +109,7 @@ const getToken = () => {
 
 $(document).ready(function() {
     getToken();
+    setInterval(function(){ alert("Hello"); }, 1000);
 });
 
 

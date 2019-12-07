@@ -1,4 +1,4 @@
-const timer = 50;
+let timer = 50;
 
 const handleArtist = (e) => {
     e.preventDefault();

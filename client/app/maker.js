@@ -1,3 +1,5 @@
+const timer = 50;
+
 const handleArtist = (e) => {
     e.preventDefault();
     
@@ -63,17 +65,11 @@ const ArtistList = function(props) {
                 <input type="hidden" name="_csrf" value={props.csrf} />
                 <input className="makeArtistSubmit" type="submit" value="Make Artist" />
             </form>
-            /*
-            <div key={artist._id} className="artist">
-                <h3 className="artistSubmitType"> Name: {artist.name} </h3>
-                <h3 className="artistSubmitValue"> Age: {artist.age} </h3>
-                <h3 className="artistAdditionalValue"> Level: {artist.level} </h3>
-            </div>
-            */
         );
     });
     
     return (
+        {timer}
         <div className="artistList">
             {artistNodes}
         </div>
@@ -109,7 +105,7 @@ const getToken = () => {
 
 $(document).ready(function() {
     getToken();
-    setInterval(function(){ alert("Hello"); }, 1000);
+    setInterval(function(){ timer--; }, 1000);
 });
 
 

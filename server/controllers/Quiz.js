@@ -64,10 +64,15 @@ const getQuizzes = (request, response) => {
 
 const getQuizData = (request, response) => {
     const res = response;
-    let outputObj = {
-        "correctAnswer":fileData[Math.floor(Math.random() * fileData.length)],
-    };
-    return res.json({ outputObj });
+    let artistChoice = [...fileData];
+    let artistsForQuiz = [];
+    for(let i = 0; i < 5; i++){
+        artistsForQuiz.push(artistChoice.splice(Math.floor(Math.random()*artistChoice.length), 1));
+    }
+    //let outputObj = {
+    //    
+    //};
+    return res.json({ artistsForQuiz });
 };
 
 module.exports.makerPage = makerPage;

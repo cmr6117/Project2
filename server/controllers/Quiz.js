@@ -71,7 +71,7 @@ const getQuizData = (request, response) => {
         artistsForQuiz.push(artistChoice.splice(Math.floor(Math.random()*artistChoice.length), 1)[0]);
     }
     
-    let correctArtist = artistsForQuiz[Math.floor(Math.random()*artistChoice.length)];
+    let correctArtist = artistsForQuiz[Math.floor(Math.random()*artistsForQuiz.length)].quiz;
     
 /*
     let artistOptions = [];
@@ -80,7 +80,7 @@ const getQuizData = (request, response) => {
     }
 */
     let outputObj = {
-        "correctArtist":correctArtist,
+        correctArtist,
         artistsForQuiz,
     };
     

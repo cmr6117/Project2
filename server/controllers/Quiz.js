@@ -76,7 +76,7 @@ const getQuizData = (request, response) => {
     const res = response;
     let artistChoice = [...fileData];
     
-    let songNum = Math.floor(Math.random()*correctArtist.songs.length);
+    let songNum = Math.floor(Math.random()*songList.length);
     let song = songList[songNum].songName;
     let correctArtist = artistChoice.splice(songList[songNum].artistIndex,1);
     

@@ -4,6 +4,16 @@ const artists = require('./artists.js');
 const Quiz = models.Quiz;
 
 let fileData = artists.Artists;
+let songList = [];
+for(let i = 0; i < fileData.length; i++){
+    for(let j = 0; j < fileData[i].songs.length; j++){
+        songList.push({
+            songName: fileData[i].songs[j],
+            artistIndex: i,
+        });
+    }
+}
+
 
 const makerPage = (req, res) => {
     Quiz.QuizModel.findByOwner(req.session.account._id, (err, docs) => {
@@ -86,6 +96,7 @@ const getQuizData = (request, response) => {
     }
 */
     let outputObj = {
+        songList,
         correctArtist,
         song,
         artistOptions,

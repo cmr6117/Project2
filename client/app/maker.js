@@ -1,4 +1,5 @@
 let timer = 50;
+let recoveryTimer = 0;
 
 const handleQuiz = (e) => {
     e.preventDefault();
@@ -120,13 +121,12 @@ const everySecond = () => {
 };
 
 const everyFiveSeconds = () => {
-    loadQuizDataFromServer();
 };
 
 $(document).ready(function() {
     getToken();
     setInterval(everySecond, 1000);
-    setInterval(everyFiveSeconds, 1000);
+    setInterval(everyFiveSeconds, 5000);
     alert(props.quizs);
 });
 

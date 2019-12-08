@@ -120,7 +120,7 @@ const everySecond = () => {
 };
 
 const everyFiveSeconds = () => {
-    loadQuizzesFromServer();
+    loadQuizDataFromServer();
 };
 
 $(document).ready(function() {

@@ -112,6 +112,7 @@ const everySecond = () => {
 $(document).ready(function() {
     getToken();
     setInterval(everySecond, 1000);
+    alert(props.artists);
 });
 
 

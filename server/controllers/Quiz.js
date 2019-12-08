@@ -84,7 +84,7 @@ const getQuizData = (request, response) => {
         artistsForQuiz,
     };
     
-    return res.json({ outputObj });
+    return res.json(outputObj);
 };
 
 module.exports.makerPage = makerPage;

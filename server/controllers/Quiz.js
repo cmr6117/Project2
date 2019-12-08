@@ -2,7 +2,7 @@
 const models = require('../models');
 const Quiz = models.Quiz;
 
-let fileData = require('./quizs.json');
+let fileData = require('quizs.json');
 
 /*
 let questionData = {

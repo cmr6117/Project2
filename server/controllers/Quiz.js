@@ -64,10 +64,10 @@ const getQuizzes = (request, response) => {
 
 const getQuizData = (request, response) => {
     const res = response;
-    let = {
+    let outputObj = {
         "correctAnswer":fileData[Math.floor(Math.random() * fileData.length)],
     };
-    return res.json({ fileData });
+    return res.json({ outputObj });
 };
 
 module.exports.makerPage = makerPage;

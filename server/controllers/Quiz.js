@@ -76,17 +76,14 @@ const getQuizData = (request, response) => {
     const res = response;
     let artistChoice = [...fileData];
     
-    let artistsForQuiz = [];
-    for(let i = 0; i < 5; i++){
-        artistsForQuiz.push(artistChoice.splice(Math.floor(Math.random()*artistChoice.length), 1)[0]);
-    }
+    let songNum = Math.floor(Math.random()*correctArtist.songs.length);
+    let song = songList[songNum].songName;
+    let correctArtist = artistChoice.splice(songList[songNum].artistIndex,1);
     
-    let correctArtist = artistsForQuiz[Math.floor(Math.random()*artistsForQuiz.length)];
-    let song = correctArtist.songs[Math.floor(Math.random()*correctArtist.songs.length)]
-    correctArtist = correctArtist.quiz;
-    let artistOptions = [];
-    for(let i = 0; i < 5; i++){
-        artistOptions.push(artistsForQuiz[i].quiz);
+    let artistsForQuiz = [];
+    for(let i = 0; i < 4; i++){
+        let currentArtist = artistChoice.splice(Math.floor(Math.random()*artistChoice.length), 1)[0];
+        artistsForQuiz.push(currentArtist);
     }
 
 /*
@@ -96,10 +93,10 @@ const getQuizData = (request, response) => {
     }
 */
     let outputObj = {
-        songList,
         correctArtist,
         song,
-        artistOptions,
+        "artistOptions":artistsForQuiz,
+        artistsForQuiz,
     };
     
     return res.json(outputObj);

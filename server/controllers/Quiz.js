@@ -71,7 +71,6 @@ const getQuizzes = (request, response) => {
 };
 
 const getQuizData = (request, response) => {
-    const req = request;
     const res = response;
     
     return res.json({ fileData });
@@ -79,4 +78,5 @@ const getQuizData = (request, response) => {
 
 module.exports.makerPage = makerPage;
 module.exports.getQuizzes = getQuizzes;
+module.exports.getQuizData = getQuizData;
 module.exports.make = makeQuiz;

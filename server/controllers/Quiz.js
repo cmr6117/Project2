@@ -65,14 +65,26 @@ const getQuizzes = (request, response) => {
 const getQuizData = (request, response) => {
     const res = response;
     let artistChoice = [...fileData];
+    
     let artistsForQuiz = [];
     for(let i = 0; i < 5; i++){
-        artistsForQuiz.push(artistChoice.splice(Math.floor(Math.random()*artistChoice.length), 1));
+        artistsForQuiz.push(artistChoice.splice(Math.floor(Math.random()*artistChoice.length), 1)[0]);
     }
-    //let outputObj = {
-    //    
-    //};
-    return res.json({ artistsForQuiz });
+    
+    let correctArtist = artistsForQuiz[Math.floor(Math.random()*artistChoice.length)];
+    
+/*
+    let artistOptions = [];
+    for(let i = 0; i < 5; i++){
+        
+    }
+*/
+    let outputObj = {
+        correctArtist,
+        artistsForQuiz,
+    };
+    
+    return res.json({ outputObj });
 };
 
 module.exports.makerPage = makerPage;

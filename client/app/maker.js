@@ -1,86 +1,86 @@
 let timer = 50;
 
-const handleArtist = (e) => {
+const handleQuiz = (e) => {
     e.preventDefault();
     
-    $("#artistMessage").animate({width:'hide'},350);
+    $("#quizMessage").animate({width:'hide'},350);
     
-    if($("#artistSubmitType").val() == '' || $("#artistSubmitValue").val() == '' || $("#artistAdditionalValue").val() == ''){
+    if($("#quizSubmitType").val() == '' || $("#quizSubmitValue").val() == '' || $("#quizAdditionalValue").val() == ''){
         handleError("RAWR! All fields are required");
         return false;
     }
   
-    sendAjax('POST', $("#artistForm").attr("action"), $("#artistForm").serialize(), () => {
-        loadArtistsFromServer();
+    sendAjax('POST', $("#quizForm").attr("action"), $("#quizForm").serialize(), () => {
+        loadQuizsFromServer();
     });
     
     return false;
 };
 
-const ArtistForm = (props) => {
+const QuizForm = (props) => {
     return (
-        <form id="artistForm"
-            onSubmit={handleArtist}
-            name="artistForm"
+        <form id="quizForm"
+            onSubmit={handleQuiz}
+            name="quizForm"
             action="/maker"
             method="POST"
-            className="artistForm"
+            className="quizForm"
         >
             <label htmlFor="name">Submission Type: </label>
-            <input id="artistSubmitType" type="text" name="name" placeholder="Submission Type"/>
+            <input id="quizSubmitType" type="text" name="name" placeholder="Submission Type"/>
             <label htmlFor="age">Submission Value: </label>
-            <input id="artistSubmitValue" type="text" name="age" placeholder="Submission Value"/>
+            <input id="quizSubmitValue" type="text" name="age" placeholder="Submission Value"/>
             <label htmlFor="level">Additional Values: </label>
-            <input id="artistAdditionalValue" type="text" name="level" placeholder="Additional Values"/>
+            <input id="quizAdditionalValue" type="text" name="level" placeholder="Additional Values"/>
             <input type="hidden" name="_csrf" value={props.csrf} />
-            <input className="makeArtistSubmit" type="submit" value="Make Artist" />
+            <input className="makeQuizSubmit" type="submit" value="Make Quiz" />
         </form>
     );
 };
 
-const ArtistList = function(props) {
-    if(props.artists.length === 0) {
+const QuizList = function(props) {
+    if(props.quizs.length === 0) {
         return (
-            <div className="artistList">
-                <h3 className="emptyArtist">No artists yet</h3>
+            <div className="quizList">
+                <h3 className="emptyQuiz">No quizs yet</h3>
             </div>
         );
     }
     
-    const artistNodes = props.artists.map(function(artist) {
+    const quizNodes = props.quizs.map(function(quiz) {
         return (
-            <form id="artistForm"
-                onSubmit={handleArtist}
-                name="artistForm"
+            <form id="quizForm"
+                onSubmit={handleQuiz}
+                name="quizForm"
                 action="/maker"
                 method="POST"
-                className="artistForm"
+                className="quizForm"
             >
                 <label htmlFor="name">Submission Type: </label>
-                <input id="artistSubmitType{artist.name}" type="text" name="name" placeholder="Submission Type" value={artist.name} />
+                <input id="quizSubmitType{quiz.name}" type="text" name="name" placeholder="Submission Type" value={quiz.name} />
                 <label htmlFor="age">Submission Value: </label>
-                <input id="artistSubmitValue{artist.name}" type="text" name="age" placeholder="Submission Value" value={artist.age} />
+                <input id="quizSubmitValue{quiz.name}" type="text" name="age" placeholder="Submission Value" value={quiz.age} />
                 <label htmlFor="level">Additional Values: </label>
-                <input id="artistAdditionalValue{artist.name}" type="text" name="level" placeholder="Additional Values" value={artist.level} />
+                <input id="quizAdditionalValue{quiz.name}" type="text" name="level" placeholder="Additional Values" value={quiz.level} />
                 <input type="hidden" name="_csrf" value={props.csrf} />
-                <input className="makeArtistSubmit" type="submit" value="Make Artist" />
+                <input className="makeQuizSubmit" type="submit" value="Make Quiz" />
             </form>
         );
     });
     
     return (
-        <div className="artistList">
+        <div className="quizList">
             {timer}
-            {artistNodes}
+            {quizNodes}
         </div>
     );
 };
 
-const loadArtistsFromServer = () => {
-    sendAjax('GET', '/getArtists', null, (data) => {
+const loadQuizsFromServer = () => {
+    sendAjax('GET', '/getQuizs', null, (data) => {
       console.dir('loading');
         ReactDOM.render(
-            <ArtistList artists={data.artists} />, document.querySelector("#artists")
+            <QuizList quizs={data.quizs} />, document.querySelector("#quizs")
         );
       console.dir('finished loading');
     });
@@ -88,14 +88,14 @@ const loadArtistsFromServer = () => {
 
 const setup = function(csrf) {
     ReactDOM.render(
-        <ArtistForm csrf={csrf} />, document.querySelector("#makeArtist")
+        <QuizForm csrf={csrf} />, document.querySelector("#makeQuiz")
     );
 
     ReactDOM.render(
-        <ArtistForm artists={[]} />, document.querySelector("#artists")
+        <QuizForm quizs={[]} />, document.querySelector("#quizs")
     );
 
-    loadArtistsFromServer();
+    loadQuizsFromServer();
 };
 
 const getToken = () => {
@@ -106,13 +106,13 @@ const getToken = () => {
 
 const everySecond = () => {
     timer--;
-    loadArtistsFromServer();
+    loadQuizsFromServer();
 };
 
 $(document).ready(function() {
     getToken();
     setInterval(everySecond, 1000);
-    alert(props.artists);
+    alert(props.quizs);
 });
 
 

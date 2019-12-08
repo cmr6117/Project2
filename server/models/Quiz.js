@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const _ = require('underscore');
 
-let ArtistModel = {};
+let QuizModel = {};
 
 const convertId = mongoose.Types.ObjectId;
 const setName = (name) => _.escape(name).trim();
 
-const ArtistSchema = new mongoose.Schema({
+const QuizSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -39,21 +39,21 @@ const ArtistSchema = new mongoose.Schema({
     },
 });
 
-ArtistSchema.statics.toAPI = (doc) => ({
+QuizSchema.statics.toAPI = (doc) => ({
     name: doc.name,
     age: doc.age,
     level: doc.level,
 });
 
-ArtistSchema.statics.findByOwner = (ownerId, callback) => {
+QuizSchema.statics.findByOwner = (ownerId, callback) => {
     const search = {
         owner: convertId(ownerId),
     };
     
-    return ArtistModel.find(search).select('name age level').exec(callback);
+    return QuizModel.find(search).select('name age level').exec(callback);
 };
 
-ArtistModel = mongoose.model('Artist', ArtistSchema);
+QuizModel = mongoose.model('Quiz', QuizSchema);
 
-module.exports.ArtistModel = ArtistModel;
-module.exports.ArtistSchema = ArtistSchema;
+module.exports.QuizModel = QuizModel;
+module.exports.QuizSchema = QuizSchema;

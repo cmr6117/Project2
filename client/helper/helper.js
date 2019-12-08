@@ -1,10 +1,10 @@
 const handleError = (message) => {
     $("#errorMessage").text(message);
-    $("#artistMessage").animate({width:'toggle'},350);
+    $("#quizMessage").animate({width:'toggle'},350);
 };
 
 const redirect = (response) => {
-    $("artistMessage").animate({width:'hide'},350);
+    $("quizMessage").animate({width:'hide'},350);
     window.location = response.redirect;
 };
 

@@ -1,8 +1,8 @@
 //const fs = require('fs');
 const models = require('../models');
-const Artist = models.Artist;
+const Quiz = models.Quiz;
 
-//let fileData = require('./artists.json');
+//let fileData = require('./quizs.json');
 
 /*
 let questionData = {
@@ -14,62 +14,62 @@ let questionData = {
 
 
 const makerPage = (req, res) => {
-    Artist.ArtistModel.findByOwner(req.session.account._id, (err, docs) => {
+    Quiz.QuizModel.findByOwner(req.session.account._id, (err, docs) => {
         if (err) {
             console.log(err);
             return res.status(400).json({ error: 'An error occurred' });
         }
         
-        return res.render('app', { csrfToken: req.csrfToken(), artists: docs });
+        return res.render('app', { csrfToken: req.csrfToken(), quizs: docs });
     });
 };
 
-const makeArtist = (req, res) => {
+const makeQuiz = (req, res) => {
     if (!req.body.name || !req.body.age || !req.body.level){
         return res.status(400).json({ error: 'RAWR! Both name, age, and level are required' });
     }
     
-    const artistData = {
+    const quizData = {
         name: req.body.name,
         age: req.body.age,
         level: req.body.level,
         owner: req.session.account._id,
     }
     
-    const newArtist = new Artist.ArtistModel(artistData);
+    const newQuiz = new Quiz.QuizModel(quizData);
     
-    const artistPromise = newArtist.save();
+    const quizPromise = newQuiz.save();
   
-    artistPromise.then(() => {
-      res.json({newArtist});
+    quizPromise.then(() => {
+      res.json({newQuiz});
     });
     
-    artistPromise.catch((err) => {
+    quizPromise.catch((err) => {
         console.log(err);
         if (err.code === 11000){
-            return res.status(400).json({ error: 'Artist already exists.' });
+            return res.status(400).json({ error: 'Quiz already exists.' });
         }
         
         return res.status(400).json({ error: 'An error occurred' });
     });    
     
-    return artistPromise;
+    return quizPromise;
 };
 
-const getArtists = (request, response) => {
+const getQuizs = (request, response) => {
     const req = request;
     const res = response;
     
-    return Artist.ArtistModel.findByOwner(req.session.account._id, (err, docs) => {
+    return Quiz.QuizModel.findByOwner(req.session.account._id, (err, docs) => {
         if (err) {
             console.log(err);
             return res.status(400).json({ error: 'An error occurred' });
         }
         
-        return res.json({ artists: docs });
+        return res.json({ quizs: docs });
     });
 };
 
 module.exports.makerPage = makerPage;
-module.exports.getArtists = getArtists;
-module.exports.make = makeArtist;
+module.exports.getQuizs = getQuizs;
+module.exports.make = makeQuiz;

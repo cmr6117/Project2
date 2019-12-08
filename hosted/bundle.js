@@ -1,104 +1,104 @@
 "use strict";
 
-var handleArtist = function handleArtist(e) {
+var handleQuiz = function handleQuiz(e) {
     e.preventDefault();
 
-    $("#artistMessage").animate({ width: 'hide' }, 350);
+    $("#quizMessage").animate({ width: 'hide' }, 350);
 
-    if ($("#artistSubmitType").val() == '' || $("#artistSubmitValue").val() == '' || $("#artistAdditionalValue").val() == '') {
+    if ($("#quizSubmitType").val() == '' || $("#quizSubmitValue").val() == '' || $("#quizAdditionalValue").val() == '') {
         handleError("RAWR! All fields are required");
         return false;
     }
 
-    sendAjax('POST', $("#artistForm").attr("action"), $("#artistForm").serialize(), function () {
-        loadArtistsFromServer();
+    sendAjax('POST', $("#quizForm").attr("action"), $("#quizForm").serialize(), function () {
+        loadQuizsFromServer();
     });
 
     return false;
 };
 
-var ArtistForm = function ArtistForm(props) {
+var QuizForm = function QuizForm(props) {
     return React.createElement(
         "form",
-        { id: "artistForm",
-            onSubmit: handleArtist,
-            name: "artistForm",
+        { id: "quizForm",
+            onSubmit: handleQuiz,
+            name: "quizForm",
             action: "/maker",
             method: "POST",
-            className: "artistForm"
+            className: "quizForm"
         },
         React.createElement(
             "label",
             { htmlFor: "name" },
             "Submission Type: "
         ),
-        React.createElement("input", { id: "artistSubmitType", type: "text", name: "name", placeholder: "Submission Type" }),
+        React.createElement("input", { id: "quizSubmitType", type: "text", name: "name", placeholder: "Submission Type" }),
         React.createElement(
             "label",
             { htmlFor: "age" },
             "Submission Value: "
         ),
-        React.createElement("input", { id: "artistSubmitValue", type: "text", name: "age", placeholder: "Submission Value" }),
+        React.createElement("input", { id: "quizSubmitValue", type: "text", name: "age", placeholder: "Submission Value" }),
         React.createElement(
             "label",
             { htmlFor: "level" },
             "Additional Values: "
         ),
-        React.createElement("input", { id: "artistAdditionalValue", type: "text", name: "level", placeholder: "Additional Values" }),
+        React.createElement("input", { id: "quizAdditionalValue", type: "text", name: "level", placeholder: "Additional Values" }),
         React.createElement("input", { type: "hidden", name: "_csrf", value: props.csrf }),
-        React.createElement("input", { className: "makeArtistSubmit", type: "submit", value: "Make Artist" })
+        React.createElement("input", { className: "makeQuizSubmit", type: "submit", value: "Make Quiz" })
     );
 };
 
-var ArtistList = function ArtistList(props) {
-    if (props.artists.length === 0) {
+var QuizList = function QuizList(props) {
+    if (props.quizs.length === 0) {
         return React.createElement(
             "div",
-            { className: "artistList" },
+            { className: "quizList" },
             React.createElement(
                 "h3",
-                { className: "emptyArtist" },
-                "No artists yet"
+                { className: "emptyQuiz" },
+                "No quizs yet"
             )
         );
     }
 
-    var artistNodes = props.artists.map(function (artist) {
+    var quizNodes = props.quizs.map(function (quiz) {
         return React.createElement(
             "form",
-            { id: "artistForm",
-                onSubmit: handleArtist,
-                name: "artistForm",
+            { id: "quizForm",
+                onSubmit: handleQuiz,
+                name: "quizForm",
                 action: "/maker",
                 method: "POST",
-                className: "artistForm"
+                className: "quizForm"
             },
             React.createElement(
                 "label",
                 { htmlFor: "name" },
                 "Submission Type: "
             ),
-            React.createElement("input", { id: "artistSubmitType{artist.name}", type: "text", name: "name", placeholder: "Submission Type", value: artist.name }),
+            React.createElement("input", { id: "quizSubmitType{quiz.name}", type: "text", name: "name", placeholder: "Submission Type", value: quiz.name }),
             React.createElement(
                 "label",
                 { htmlFor: "age" },
                 "Submission Value: "
             ),
-            React.createElement("input", { id: "artistSubmitValue{artist.name}", type: "text", name: "age", placeholder: "Submission Value", value: artist.age }),
+            React.createElement("input", { id: "quizSubmitValue{quiz.name}", type: "text", name: "age", placeholder: "Submission Value", value: quiz.age }),
             React.createElement(
                 "label",
                 { htmlFor: "level" },
                 "Additional Values: "
             ),
-            React.createElement("input", { id: "artistAdditionalValue{artist.name}", type: "text", name: "level", placeholder: "Additional Values", value: artist.level }),
+            React.createElement("input", { id: "quizAdditionalValue{quiz.name}", type: "text", name: "level", placeholder: "Additional Values", value: quiz.level }),
             React.createElement("input", { type: "hidden", name: "_csrf", value: props.csrf }),
-            React.createElement("input", { className: "makeArtistSubmit", type: "submit", value: "Make Artist" })
+            React.createElement("input", { className: "makeQuizSubmit", type: "submit", value: "Make Quiz" })
         )
         /*
-        <div key={artist._id} className="artist">
-            <h3 className="artistSubmitType"> Name: {artist.name} </h3>
-            <h3 className="artistSubmitValue"> Age: {artist.age} </h3>
-            <h3 className="artistAdditionalValue"> Level: {artist.level} </h3>
+        <div key={quiz._id} className="quiz">
+            <h3 className="quizSubmitType"> Name: {quiz.name} </h3>
+            <h3 className="quizSubmitValue"> Age: {quiz.age} </h3>
+            <h3 className="quizAdditionalValue"> Level: {quiz.level} </h3>
         </div>
         */
         ;
@@ -106,24 +106,24 @@ var ArtistList = function ArtistList(props) {
 
     return React.createElement(
         "div",
-        { className: "artistList" },
-        artistNodes
+        { className: "quizList" },
+        quizNodes
     );
 };
 
-var loadArtistsFromServer = function loadArtistsFromServer() {
-    sendAjax('GET', '/getArtists', null, function (data) {
+var loadQuizsFromServer = function loadQuizsFromServer() {
+    sendAjax('GET', '/getQuizs', null, function (data) {
         console.dir('loading');
-        ReactDOM.render(React.createElement(ArtistList, { artists: data.artists }), document.querySelector("#artists"));
+        ReactDOM.render(React.createElement(QuizList, { quizs: data.quizs }), document.querySelector("#quizs"));
     });
 };
 
 var setup = function setup(csrf) {
-    ReactDOM.render(React.createElement(ArtistForm, { csrf: csrf }), document.querySelector("#makeArtist"));
+    ReactDOM.render(React.createElement(QuizForm, { csrf: csrf }), document.querySelector("#makeQuiz"));
 
-    ReactDOM.render(React.createElement(ArtistForm, { artists: [] }), document.querySelector("#artists"));
+    ReactDOM.render(React.createElement(QuizForm, { quizs: [] }), document.querySelector("#quizs"));
 
-    loadArtistsFromServer();
+    loadQuizsFromServer();
 };
 
 var getToken = function getToken() {
@@ -139,11 +139,11 @@ $(document).ready(function () {
 
 var handleError = function handleError(message) {
     $("#errorMessage").text(message);
-    $("#artistMessage").animate({ width: 'toggle' }, 350);
+    $("#quizMessage").animate({ width: 'toggle' }, 350);
 };
 
 var redirect = function redirect(response) {
-    $("artistMessage").animate({ width: 'hide' }, 350);
+    $("quizMessage").animate({ width: 'hide' }, 350);
     window.location = response.redirect;
 };
 

@@ -14,7 +14,7 @@ const csrf = require('csurf');
 
 const port = process.env.PORT || process.env.NODE_PORT || 3000;
 
-const dbURL = process.env.MONGODB_URI || 'mongodb://localhost/ArtistMaker';
+const dbURL = process.env.MONGODB_URI || 'mongodb://localhost/QuizMaker';
 
 mongoose.connect(dbURL, (err) => {
     if (err) {

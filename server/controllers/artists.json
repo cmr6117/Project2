@@ -1,6 +1,6 @@
 [
    {
-      "artist":"Weird Al Yankovic",
+      "quiz":"Weird Al Yankovic",
       "songs":[
          "Dare To Be Stupid",
          "White & Nerdy",
@@ -14,20 +14,20 @@
       ]
    },
    {
-      "artist":"a-ha",
+      "quiz":"a-ha",
       "songs":[
          "Take On Me"
       ]
    },
    {
-      "artist":"ABBA",
+      "quiz":"ABBA",
       "songs":[
          "Dancing Queen",
          "Mamma Mia"
       ]
    },
    {
-      "artist":"AC/DC",
+      "quiz":"AC/DC",
       "songs":[
          "Back In Black",
          "Ballbreaker",
@@ -41,21 +41,21 @@
       ]
    },
    {
-      "artist":"Adele",
+      "quiz":"Adele",
       "songs":[
          "Rolling in the Deep",
          "Set Fire to the Rain"
       ]
    },
    {
-      "artist":"Aerosmith",
+      "quiz":"Aerosmith",
       "songs":[
          "Dude (Looks Like A Lady)",
          "Walk This Way"
       ]
    },
    {
-      "artist":"Billy Joel",
+      "quiz":"Billy Joel",
       "songs":[
          "Uptown Girl",
          "Piano Man",
@@ -63,14 +63,14 @@
       ]
    },
    {
-      "artist":"Bob Dylan",
+      "quiz":"Bob Dylan",
       "songs":[
          "Knockin' On Heaven's Door",
          "Blowin' In The Wind"
       ]
    },
    {
-      "artist":"Bon Jovi",
+      "quiz":"Bon Jovi",
       "songs":[
          "Who Says You Can't Go Home",
          "Wanted Dead Or Alive",
@@ -81,26 +81,26 @@
       ]
    },
    {
-      "artist":"Bonnie Tyler",
+      "quiz":"Bonnie Tyler",
       "songs":[
          "Holding Out For A Hero"
       ]
    },
    {
-      "artist":"Bruce Springsteen",
+      "quiz":"Bruce Springsteen",
       "songs":[
          "Dancing In the Dark",
          "Born in the U.S.A."
       ]
    },
    {
-      "artist":"Bryan Adams",
+      "quiz":"Bryan Adams",
       "songs":[
          "Summer Of '69"
       ]
    },
    {
-      "artist":"David Bowie",
+      "quiz":"David Bowie",
       "songs":[
          "Scary Monsters (And Super Creeps)",
          "Heroes",
@@ -111,7 +111,7 @@
       ]
    },
    {
-      "artist":"Deep Purple",
+      "quiz":"Deep Purple",
       "songs":[
          "Highway Star",
          "Smoke On The Water",
@@ -119,60 +119,60 @@
       ]
    },
    {
-      "artist":"Def Leppard",
+      "quiz":"Def Leppard",
       "songs":[
          "Pour Some Sugar On Me",
          "Rock Of Ages"
       ]
    },
    {
-      "artist":"Dio",
+      "quiz":"Dio",
       "songs":[
          "Holy Diver",
          "Rainbow In The Dark"
       ]
    },
    {
-      "artist":"Dire Straits",
+      "quiz":"Dire Straits",
       "songs":[
          "Sultans Of Swing"
       ]
    },
    {
-      "artist":"Dolly Parton",
+      "quiz":"Dolly Parton",
       "songs":[
          "9 to 5",
          "Jolene"
       ]
    },
    {
-      "artist":"Don McLean",
+      "quiz":"Don McLean",
       "songs":[
          "American Pie"
       ]
    },
    {
-      "artist":"Earth, Wind, & Fire",
+      "quiz":"Earth, Wind, & Fire",
       "songs":[
          "September",
          "Boogie Wonderland"
       ]
    },
    {
-      "artist":"Electric Light Orchestra",
+      "quiz":"Electric Light Orchestra",
       "songs":[
          "Mr. Blue Sky"
       ]
    },
    {
-      "artist":"Elton John",
+      "quiz":"Elton John",
       "songs":[
          "Rocket Man",
          "Don't Go Breaking My Heart"
       ]
    },
    {
-      "artist":"Elvis Presley",
+      "quiz":"Elvis Presley",
       "songs":[
          "The Wonder Of You",
          "King Creole",
@@ -187,7 +187,7 @@
       ]
    },
    {
-      "artist":"Fleetwood Mac",
+      "quiz":"Fleetwood Mac",
       "songs":[
          "The Chain",
          "Monday Morning",
@@ -198,7 +198,7 @@
       ]
    },
    {
-      "artist":"Green Day",
+      "quiz":"Green Day",
       "songs":[
          "Basket Case",
          "American Idiot",
@@ -210,44 +210,44 @@
       ]
    },
    {
-      "artist":"Hanson",
+      "quiz":"Hanson",
       "songs":[
          "MMBop"
       ]
    },
    {
-      "artist":"Jamiroquai",
+      "quiz":"Jamiroquai",
       "songs":[
          "Virtual Insanity"
       ]
    },
    {
-      "artist":"John Denver",
+      "quiz":"John Denver",
       "songs":[
          "Take Me Home, Country Roads"
       ]
    },
    {
-      "artist":"Journey",
+      "quiz":"Journey",
       "songs":[
          "Don't Stop Believin'",
          "Any Way You Want It"
       ]
    },
    {
-      "artist":"Kansas",
+      "quiz":"Kansas",
       "songs":[
          "Carry on Wayward Son"
       ]
    },
    {
-      "artist":"Katrina & The Waves",
+      "quiz":"Katrina & The Waves",
       "songs":[
          "Walking On Sunshine"
       ]
    },
    {
-      "artist":"King Crimson",
+      "quiz":"King Crimson",
       "songs":[
          "21st Century Schizoid Man",
          "The Court Of The Crimson King",
@@ -256,14 +256,14 @@
       ]
    },
    {
-      "artist":"KISS",
+      "quiz":"KISS",
       "songs":[
          "Rock And Roll All Nite",
          "Heaven's On Fire"
       ]
    },
    {
-      "artist":"Lady Gaga",
+      "quiz":"Lady Gaga",
       "songs":[
          "Born This Way",
          "Bad Romance",
@@ -273,7 +273,7 @@
       ]
    },
    {
-      "artist":"Led Zeppelin",
+      "quiz":"Led Zeppelin",
       "songs":[
          "Stairway To Heaven",
          "Immigrant Song",
@@ -281,14 +281,14 @@
       ]
    },
    {
-      "artist":"Madonna",
+      "quiz":"Madonna",
       "songs":[
          "Material Girl",
          "Like a Virgin"
       ]
    },
    {
-      "artist":"Metallica",
+      "quiz":"Metallica",
       "songs":[
          "Enter Sandman",
          "Master Of Puppets",
@@ -296,7 +296,7 @@
       ]
    },
    {
-      "artist":"Michael Jackson",
+      "quiz":"Michael Jackson",
       "songs":[
          "Billie Jean",
          "Beat It",
@@ -307,32 +307,32 @@
       ]
    },
    {
-      "artist":"Nat King Cole",
+      "quiz":"Nat King Cole",
       "songs":[
          "L-O-V-E",
          "Joy To The World"
       ]
    },
    {
-      "artist":"Neil Diamond",
+      "quiz":"Neil Diamond",
       "songs":[
          "Sweet Caroline"
       ]
    },
    {
-      "artist":"Nirvana",
+      "quiz":"Nirvana",
       "songs":[
          "Smells Like Teen Spirit"
       ]
    },
    {
-      "artist":"Oasis",
+      "quiz":"Oasis",
       "songs":[
          "Wonderwall"
       ]
    },
    {
-      "artist":"Pink Floyd",
+      "quiz":"Pink Floyd",
       "songs":[
          "Another Brick in the Wall",
          "Wish You Were Here",
@@ -343,7 +343,7 @@
       ]
    },
    {
-      "artist":"Prince",
+      "quiz":"Prince",
       "songs":[
          "Purple Rain",
          "Kiss",
@@ -361,13 +361,13 @@
       ]
    },
    {
-      "artist":"PSY",
+      "quiz":"PSY",
       "songs":[
          "Gangnam Style"
       ]
    },
    {
-      "artist":"Queen",
+      "quiz":"Queen",
       "songs":[
          "Princes Of The Universe",
          "Don't Stop Me Now",
@@ -385,25 +385,25 @@
       ]
    },
    {
-      "artist":"Rick Springfield",
+      "quiz":"Rick Springfield",
       "songs":[
          "Jessie's Girl"
       ]
    },
    {
-      "artist":"Ricky Martin",
+      "quiz":"Ricky Martin",
       "songs":[
          "Livin' la Vida Loca"
       ]
    },
    {
-      "artist":"Savage Garden",
+      "quiz":"Savage Garden",
       "songs":[
          "I Want You"
       ]
    },
    {
-      "artist":"Simon & Garfunkel",
+      "quiz":"Simon & Garfunkel",
       "songs":[
          "Mrs. Robinson",
          "The Sound Of Silence",
@@ -411,57 +411,57 @@
       ]
    },
    {
-      "artist":"Smash Mouth",
+      "quiz":"Smash Mouth",
       "songs":[
          "All Star"
       ]
    },
    {
-      "artist":"Starship",
+      "quiz":"Starship",
       "songs":[
          "We Built This City"
       ]
    },
    {
-      "artist":"Stevie Wonder",
+      "quiz":"Stevie Wonder",
       "songs":[
          "Superstition"
       ]
    },
    {
-      "artist":"Survivor",
+      "quiz":"Survivor",
       "songs":[
          "Eye Of The Tiger"
       ]
    },
    {
-      "artist":"Suzanne Vega",
+      "quiz":"Suzanne Vega",
       "songs":[
          "Luka",
          "Tom's Diner"
       ]
    },
    {
-      "artist":"Talking Heads",
+      "quiz":"Talking Heads",
       "songs":[
          "Psycho Killer",
          "Burning Down The House"
       ]
    },
    {
-      "artist":"Tears For Fears",
+      "quiz":"Tears For Fears",
       "songs":[
          "Everybody Wants To Rule The World"
       ]
    },
    {
-      "artist":"The Bangles",
+      "quiz":"The Bangles",
       "songs":[
          "Walk Like An Egyptian"
       ]
    },
    {
-      "artist":"The Beach Boys",
+      "quiz":"The Beach Boys",
       "songs":[
          "Wouldn't It Be Nice",
          "Surfin' U.S.A.",
@@ -469,7 +469,7 @@
       ]
    },
    {
-      "artist":"The Beatles",
+      "quiz":"The Beatles",
       "songs":[
          "Here Comes The Sun",
          "Let It Be",
@@ -485,63 +485,63 @@
       ]
    },
    {
-      "artist":"The Buggles",
+      "quiz":"The Buggles",
       "songs":[
          "Video Killed The Radio Star"
       ]
    },
    {
-      "artist":"The Clash",
+      "quiz":"The Clash",
       "songs":[
          "Rock The Casbah",
          "Should I Stay Or Should I Go"
       ]
    },
    {
-      "artist":"The Cure",
+      "quiz":"The Cure",
       "songs":[
          "Friday I'm in Love"
       ]
    },
    {
-      "artist":"The Goo Goo Dolls",
+      "quiz":"The Goo Goo Dolls",
       "songs":[
          "Iris",
          "Slide"
       ]
    },
    {
-      "artist":"The Killers",
+      "quiz":"The Killers",
       "songs":[
          "Mr. Brightside"
       ]
    },
    {
-      "artist":"The Monkees",
+      "quiz":"The Monkees",
       "songs":[
          "Daydream Believer"
       ]
    },
    {
-      "artist":"The Moody Blues",
+      "quiz":"The Moody Blues",
       "songs":[
          "Nights In White Satin"
       ]
    },
    {
-      "artist":"The O'Jays",
+      "quiz":"The O'Jays",
       "songs":[
          "Love Train"
       ]
    },
    {
-      "artist":"The Proclaimers",
+      "quiz":"The Proclaimers",
       "songs":[
          "I'm Gonna Be (500 Miles)"
       ]
    },
    {
-      "artist":"The Rolling Stones",
+      "quiz":"The Rolling Stones",
       "songs":[
          "Paint It, Black",
          "(I Can't Get No) Satisfaction",
@@ -551,63 +551,63 @@
       ]
    },
    {
-      "artist":"The Weather Girls",
+      "quiz":"The Weather Girls",
       "songs":[
          "It's Raining Men"
       ]
    },
    {
-      "artist":"Tom Petty",
+      "quiz":"Tom Petty",
       "songs":[
          "Free Fallin'"
       ]
    },
    {
-      "artist":"TOTO",
+      "quiz":"TOTO",
       "songs":[
          "Africa"
       ]
    },
    {
-      "artist":"Train",
+      "quiz":"Train",
       "songs":[
          "Hey, Soul Sister"
       ]
    },
    {
-      "artist":"Village People",
+      "quiz":"Village People",
       "songs":[
          "YMCA"
       ]
    },
    {
-      "artist":"Was (Not Was)",
+      "quiz":"Was (Not Was)",
       "songs":[
          "Walk The Dinosaur"
       ]
    },
    {
-      "artist":"Wham!",
+      "quiz":"Wham!",
       "songs":[
          "Wake Me up Before You Go-Go",
          "Last Christmas"
       ]
    },
    {
-      "artist":"Whitesnake",
+      "quiz":"Whitesnake",
       "songs":[
          "Here I Go Again"
       ]
    },
    {
-      "artist":"Whitney Houston",
+      "quiz":"Whitney Houston",
       "songs":[
          "I Wanna Dance With Somebody",
          "I Will Always Love You"
       ]
    },
    {
-      "artist":"Yes",
+      "quiz":"Yes",
       "songs":[
          "Owner of a Lonely Heart",
          "Roundabout"

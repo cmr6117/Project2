@@ -1,2 +1,2 @@
 module.exports.Account = require('./Account.js');
-module.exports.Artist = require('./Artist.js');
+module.exports.Quiz = require('./Quiz.js');

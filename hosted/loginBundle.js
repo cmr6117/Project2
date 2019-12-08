@@ -3,7 +3,7 @@
 var handleLogin = function handleLogin(e) {
     e.preventDefault();
 
-    $("artistMessage").animate({ width: 'hide' }, 350);
+    $("quizMessage").animate({ width: 'hide' }, 350);
 
     if ($("#user").val() == '' || $("#pass").val() == '') {
         handleError("RAWR! Username or password is empty");
@@ -20,7 +20,7 @@ var handleLogin = function handleLogin(e) {
 var handleSignup = function handleSignup(e) {
     e.preventDefault();
 
-    $("#artistMessage").animate({ width: 'hide' }, 350);
+    $("#quizMessage").animate({ width: 'hide' }, 350);
 
     if ($("#user").val() == '' || $("#pass").val() == '' || $("#pass2").val() == '') {
         handleError("RAWR! All fields are required");
@@ -40,7 +40,7 @@ var handleSignup = function handleSignup(e) {
 var handleChangePass = function handleChangePass(e) {
     e.preventDefault();
 
-    $("#artistMessage").animate({ width: 'hide' }, 350);
+    $("#quizMessage").animate({ width: 'hide' }, 350);
 
     if ($("#user").val() == '' || $("#pass").val() == '' || $("#pass2").val() == '' || $("#oldpass").val() == '') {
         handleError("RAWR! All fields are required");
@@ -215,11 +215,11 @@ $(document).ready(function () {
 
 var handleError = function handleError(message) {
     $("#errorMessage").text(message);
-    $("#artistMessage").animate({ width: 'toggle' }, 350);
+    $("#quizMessage").animate({ width: 'toggle' }, 350);
 };
 
 var redirect = function redirect(response) {
-    $("artistMessage").animate({ width: 'hide' }, 350);
+    $("quizMessage").animate({ width: 'hide' }, 350);
     window.location = response.redirect;
 };
 

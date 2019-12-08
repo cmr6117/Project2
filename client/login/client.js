@@ -1,7 +1,7 @@
 const handleLogin = (e) => {
     e.preventDefault();
     
-    $("artistMessage").animate({width:'hide'},350);
+    $("quizMessage").animate({width:'hide'},350);
     
     if($("#user").val() == '' || $("#pass").val() == '') {
         handleError("RAWR! Username or password is empty");
@@ -18,7 +18,7 @@ const handleLogin = (e) => {
 const handleSignup = (e) => {
     e.preventDefault();
     
-    $("#artistMessage").animate({width:'hide'},350);
+    $("#quizMessage").animate({width:'hide'},350);
     
     if($("#user").val() == '' || $("#pass").val() == '' || $("#pass2").val() == ''){
         handleError("RAWR! All fields are required");
@@ -39,7 +39,7 @@ const handleSignup = (e) => {
 const handleChangePass = (e) => {
     e.preventDefault();
     
-    $("#artistMessage").animate({width:'hide'},350);
+    $("#quizMessage").animate({width:'hide'},350);
     
     if($("#user").val() == '' || $("#pass").val() == '' || $("#pass2").val() == '' || $("#oldpass").val() == ''){
         handleError("RAWR! All fields are required");

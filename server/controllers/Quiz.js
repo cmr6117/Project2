@@ -75,7 +75,6 @@ const getQuizData = (request, response) => {
     let song = correctArtist.songs[Math.floor(Math.random()*correctArtist.songs.length)]
     correctArtist = correctArtist.quiz;
         
-    let artistOptions = 
 /*
     let artistOptions = [];
     for(let i = 0; i < 5; i++){

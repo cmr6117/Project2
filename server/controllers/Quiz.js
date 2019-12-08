@@ -64,7 +64,9 @@ const getQuizzes = (request, response) => {
 
 const getQuizData = (request, response) => {
     const res = response;
-    
+    let = {
+        "correctAnswer":fileData[Math.floor(Math.random() * fileData.length)],
+    };
     return res.json({ fileData });
 };
 

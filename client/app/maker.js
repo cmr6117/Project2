@@ -89,11 +89,11 @@ const loadQuizzesFromServer = () => {
 
 const loadQuizDataFromServer = () => {
     sendAjax('GET', '/getQuizData', null, (data) => {
-      console.dir('loading');
+    console.dir('loading');
 //        ReactDOM.render(
 //            <QuizList quizzes={data.quizzes} />, document.querySelector("#quizzes")
 //        );
-      console.dir(data);
+    console.dir(data);
     });
 };
 
@@ -126,7 +126,8 @@ const everyFiveSeconds = () => {
 $(document).ready(function() {
     getToken();
     setInterval(everySecond, 1000);
-    setInterval(everyFiveSeconds, 5000);
+    //setInterval(everyFiveSeconds, 5000);
+    loadQuizDataFromServer();
 });
 
 

@@ -80,7 +80,7 @@ const getQuizData = (request, response) => {
     }
 */
     let outputObj = {
-        correctArtist,
+        "correctArtist":correctArtist,
         artistsForQuiz,
     };
     

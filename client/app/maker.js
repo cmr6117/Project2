@@ -86,6 +86,16 @@ const loadQuizzesFromServer = () => {
     });
 };
 
+const loadQuizDataFromServer = () => {
+    sendAjax('GET', '/getQuizData', null, (data) => {
+      console.dir('loading');
+//        ReactDOM.render(
+//            <QuizList quizs={data.quizs} />, document.querySelector("#quizs")
+//        );
+      console.dir(data);
+    });
+};
+
 const setup = function(csrf) {
     ReactDOM.render(
         <QuizForm csrf={csrf} />, document.querySelector("#makeQuiz")
@@ -109,9 +119,14 @@ const everySecond = () => {
     loadQuizzesFromServer();
 };
 
+const everyFiveSeconds = () => {
+    loadQuizzesFromServer();
+};
+
 $(document).ready(function() {
     getToken();
     setInterval(everySecond, 1000);
+    setInterval(everyFiveSeconds, 1000);
     alert(props.quizs);
 });
 

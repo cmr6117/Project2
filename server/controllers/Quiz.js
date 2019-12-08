@@ -5,15 +5,6 @@ const Quiz = models.Quiz;
 
 let fileData = artists.Artists;
 
-/*
-let questionData = {
-  possibleAnswers: ['a-ha', 'weird al', 'led zeppelin'],
-  actualAnswer: 'pink floyd',
-  song: 'Dogs'
-};
-*/
-
-
 const makerPage = (req, res) => {
     Quiz.QuizModel.findByOwner(req.session.account._id, (err, docs) => {
         if (err) {

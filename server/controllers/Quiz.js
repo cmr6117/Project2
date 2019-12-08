@@ -1,8 +1,9 @@
 //const fs = require('fs');
 const models = require('../models');
+const artists = require('./artists.js');
 const Quiz = models.Quiz;
 
-let fileData = require('../controllers/quizs.json');
+let fileData = artists.Artists;
 
 /*
 let questionData = {

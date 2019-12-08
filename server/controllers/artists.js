@@ -1,4 +1,4 @@
-[
+const artists = [
    {
       "quiz":"Weird Al Yankovic",
       "songs":[
@@ -614,3 +614,5 @@
       ]
    }
 ]
+
+module.exports.Artists = artists;

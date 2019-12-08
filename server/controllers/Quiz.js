@@ -74,7 +74,11 @@ const getQuizData = (request, response) => {
     let correctArtist = artistsForQuiz[Math.floor(Math.random()*artistsForQuiz.length)];
     let song = correctArtist.songs[Math.floor(Math.random()*correctArtist.songs.length)]
     correctArtist = correctArtist.quiz;
-        
+    let artistOptions = [];
+    for(let i = 0; i < 5; i++){
+        artistOptions.push(artistsForQuiz[i].quiz);
+    }
+
 /*
     let artistOptions = [];
     for(let i = 0; i < 5; i++){
@@ -84,7 +88,7 @@ const getQuizData = (request, response) => {
     let outputObj = {
         correctArtist,
         song,
-        artistsForQuiz,
+        artistOptions,
     };
     
     return res.json(outputObj);

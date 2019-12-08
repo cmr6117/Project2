@@ -11,7 +11,7 @@ var handleQuiz = function handleQuiz(e) {
     }
 
     sendAjax('POST', $("#quizForm").attr("action"), $("#quizForm").serialize(), function () {
-        loadQuizsFromServer();
+        loadQuizzesFromServer();
     });
 
     return false;
@@ -111,8 +111,8 @@ var QuizList = function QuizList(props) {
     );
 };
 
-var loadQuizsFromServer = function loadQuizsFromServer() {
-    sendAjax('GET', '/getQuizs', null, function (data) {
+var loadQuizzesFromServer = function loadQuizzesFromServer() {
+    sendAjax('GET', '/getQuizzes', null, function (data) {
         console.dir('loading');
         ReactDOM.render(React.createElement(QuizList, { quizs: data.quizs }), document.querySelector("#quizs"));
     });
@@ -123,7 +123,7 @@ var setup = function setup(csrf) {
 
     ReactDOM.render(React.createElement(QuizForm, { quizs: [] }), document.querySelector("#quizs"));
 
-    loadQuizsFromServer();
+    loadQuizzesFromServer();
 };
 
 var getToken = function getToken() {

@@ -2,7 +2,7 @@
 const models = require('../models');
 const Quiz = models.Quiz;
 
-//let fileData = require('./quizs.json');
+let fileData = require('./quizs.json');
 
 /*
 let questionData = {
@@ -56,7 +56,7 @@ const makeQuiz = (req, res) => {
     return quizPromise;
 };
 
-const getQuizs = (request, response) => {
+const getQuizzes = (request, response) => {
     const req = request;
     const res = response;
     
@@ -70,6 +70,13 @@ const getQuizs = (request, response) => {
     });
 };
 
+const getQuizData = (request, response) => {
+    const req = request;
+    const res = response;
+    
+    return res.json({ fileData });
+};
+
 module.exports.makerPage = makerPage;
-module.exports.getQuizs = getQuizs;
+module.exports.getQuizzes = getQuizzes;
 module.exports.make = makeQuiz;

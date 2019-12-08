@@ -11,7 +11,7 @@ const handleQuiz = (e) => {
     }
   
     sendAjax('POST', $("#quizForm").attr("action"), $("#quizForm").serialize(), () => {
-        loadQuizsFromServer();
+        loadQuizzesFromServer();
     });
     
     return false;
@@ -76,8 +76,8 @@ const QuizList = function(props) {
     );
 };
 
-const loadQuizsFromServer = () => {
-    sendAjax('GET', '/getQuizs', null, (data) => {
+const loadQuizzesFromServer = () => {
+    sendAjax('GET', '/getQuizzes', null, (data) => {
       console.dir('loading');
         ReactDOM.render(
             <QuizList quizs={data.quizs} />, document.querySelector("#quizs")
@@ -95,7 +95,7 @@ const setup = function(csrf) {
         <QuizForm quizs={[]} />, document.querySelector("#quizs")
     );
 
-    loadQuizsFromServer();
+    loadQuizzesFromServer();
 };
 
 const getToken = () => {
@@ -106,7 +106,7 @@ const getToken = () => {
 
 const everySecond = () => {
     timer--;
-    loadQuizsFromServer();
+    loadQuizzesFromServer();
 };
 
 $(document).ready(function() {

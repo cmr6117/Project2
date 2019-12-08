@@ -199,7 +199,7 @@ nav:nth-child(1) {
     transform: rotate(330deg);
 }
 
-#quizs {
+#quizzes {
     width: 40%;
     min-width: 400px;
     border: 2px solid rgba(200,100,100,0.9);

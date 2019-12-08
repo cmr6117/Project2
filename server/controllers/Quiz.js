@@ -12,7 +12,7 @@ const makerPage = (req, res) => {
             return res.status(400).json({ error: 'An error occurred' });
         }
         
-        return res.render('app', { csrfToken: req.csrfToken(), quizs: docs });
+        return res.render('app', { csrfToken: req.csrfToken(), quizzes: docs });
     });
 };
 
@@ -58,7 +58,7 @@ const getQuizzes = (request, response) => {
             return res.status(400).json({ error: 'An error occurred' });
         }
         
-        return res.json({ quizs: docs });
+        return res.json({ quizzes: docs });
     });
 };
 

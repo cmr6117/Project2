@@ -40,15 +40,15 @@ const QuizForm = (props) => {
 };
 
 const QuizList = function(props) {
-    if(props.quizs.length === 0) {
+    if(props.quizzes.length === 0) {
         return (
             <div className="quizList">
-                <h3 className="emptyQuiz">No quizs yet</h3>
+                <h3 className="emptyQuiz">No quizzes yet</h3>
             </div>
         );
     }
     
-    const quizNodes = props.quizs.map(function(quiz) {
+    const quizNodes = props.quizzes.map(function(quiz) {
         return (
             <form id="quizForm"
                 onSubmit={handleQuiz}
@@ -81,7 +81,7 @@ const loadQuizzesFromServer = () => {
     sendAjax('GET', '/getQuizzes', null, (data) => {
       console.dir('loading');
         ReactDOM.render(
-            <QuizList quizs={data.quizs} />, document.querySelector("#quizs")
+            <QuizList quizzes={data.quizzes} />, document.querySelector("#quizzes")
         );
       console.dir('finished loading');
     });
@@ -91,7 +91,7 @@ const loadQuizDataFromServer = () => {
     sendAjax('GET', '/getQuizData', null, (data) => {
       console.dir('loading');
 //        ReactDOM.render(
-//            <QuizList quizs={data.quizs} />, document.querySelector("#quizs")
+//            <QuizList quizzes={data.quizzes} />, document.querySelector("#quizzes")
 //        );
       console.dir(data);
     });
@@ -103,7 +103,7 @@ const setup = function(csrf) {
     );
 
     ReactDOM.render(
-        <QuizForm quizs={[]} />, document.querySelector("#quizs")
+        <QuizForm quizzes={[]} />, document.querySelector("#quizzes")
     );
 
     loadQuizzesFromServer();
@@ -127,7 +127,6 @@ $(document).ready(function() {
     getToken();
     setInterval(everySecond, 1000);
     setInterval(everyFiveSeconds, 5000);
-    alert(props.quizs);
 });
 
 

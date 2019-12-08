@@ -51,19 +51,19 @@ var QuizForm = function QuizForm(props) {
 };
 
 var QuizList = function QuizList(props) {
-    if (props.quizs.length === 0) {
+    if (props.quizzes.length === 0) {
         return React.createElement(
             "div",
             { className: "quizList" },
             React.createElement(
                 "h3",
                 { className: "emptyQuiz" },
-                "No quizs yet"
+                "No quizzes yet"
             )
         );
     }
 
-    var quizNodes = props.quizs.map(function (quiz) {
+    var quizNodes = props.quizzes.map(function (quiz) {
         return React.createElement(
             "form",
             { id: "quizForm",
@@ -114,14 +114,14 @@ var QuizList = function QuizList(props) {
 var loadQuizzesFromServer = function loadQuizzesFromServer() {
     sendAjax('GET', '/getQuizzes', null, function (data) {
         console.dir('loading');
-        ReactDOM.render(React.createElement(QuizList, { quizs: data.quizs }), document.querySelector("#quizs"));
+        ReactDOM.render(React.createElement(QuizList, { quizzes: data.quizzes }), document.querySelector("#quizzes"));
     });
 };
 
 var setup = function setup(csrf) {
     ReactDOM.render(React.createElement(QuizForm, { csrf: csrf }), document.querySelector("#makeQuiz"));
 
-    ReactDOM.render(React.createElement(QuizForm, { quizs: [] }), document.querySelector("#quizs"));
+    ReactDOM.render(React.createElement(QuizForm, { quizzes: [] }), document.querySelector("#quizzes"));
 
     loadQuizzesFromServer();
 };

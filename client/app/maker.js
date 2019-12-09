@@ -57,7 +57,7 @@ const QuizList = function(props) {
                 action="/maker"
                 method="POST"
                 className="quizForm"
-            >
+            > 
                 <input id="quizSubmitType{quiz.quizCorrect}" type="hidden" name="quizCorrect" placeholder="Submission Type" value={props.quizzes.correctArtist} />
                 <input id="quizSubmitValue{quiz.quizChoice}" type="submit" name="quizChoice" placeholder="Submission Value" value={quiz.quizChoice} />
                 <input type="hidden" name="_csrf" value={props.csrf} />

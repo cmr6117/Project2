@@ -31,7 +31,7 @@ const makeQuiz = (req, res) => {
         return res.status(400).json({ error: 'All fields are required' });
     }
     
-    let quizVictory = (req.body.quizCorrect == req.body.quizChoice);
+    let quizVictory = (req.body.quizCorrect === req.body.quizChoice);
     const quizData = {
         quizCorrect: req.body.quizCorrect,
         quizChoice: req.body.quizChoice,

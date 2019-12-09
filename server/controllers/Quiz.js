@@ -27,14 +27,15 @@ const makerPage = (req, res) => {
 };
 
 const makeQuiz = (req, res) => {
-    if (!req.body.name || !req.body.age || !req.body.level){
-        return res.status(400).json({ error: 'RAWR! Both name, age, and level are required' });
+    if (!req.body.quizCorrect || !req.body.quizChoice || !req.body.quizSong){
+        return res.status(400).json({ error: 'All fields are required' });
     }
     
     const quizData = {
-        name: req.body.name,
-        age: req.body.age,
-        level: req.body.level,
+        quizCorrect: req.body.quizCorrect,
+        quizChoice: req.body.quizChoice,
+        quizSong: req.body.quizSong,
+        quizWon: (req.body.quizCorrect == req.body.quizChoice),
         owner: req.session.account._id,
     }
     

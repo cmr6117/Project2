@@ -27,15 +27,19 @@ const QuizForm = (props) => {
             method="POST"
             className="quizForm"
         >
-            <label htmlFor="name">Submission Type: </label>
-            <input id="quizSubmitType" type="text" name="name" placeholder="Submission Type"/>
-            <label htmlFor="age">Submission Value: </label>
-            <input id="quizSubmitValue" type="text" name="age" placeholder="Submission Value"/>
-            <label htmlFor="level">Additional Values: </label>
-            <input id="quizAdditionalValue" type="text" name="level" placeholder="Additional Values"/>
+            <label htmlFor="quizCorrect">Submission Type: </label>
+            <input id="quizSubmitType" type="text" name="quizCorrect" placeholder="Submission Type"/>
+            <label htmlFor="quizChoice">Submission Value: </label>
+            <input id="quizSubmitValue" type="text" name="quizChoice" placeholder="Submission Value"/>
+            <label htmlFor="quizSong">Additional Values: </label>
+            <input id="quizAdditionalValue" type="text" name="quizSong" placeholder="Additional Values"/>
             <input type="hidden" name="_csrf" value={props.csrf} />
             <input className="makeQuizSubmit" type="submit" value="Make Quiz" />
         </form>
+            quizCorrect: doc.quizCorrect,
+            quizChoice: doc.quizChoice,
+            quizSong: doc.quizSong,
+
     );
 };
 
@@ -57,12 +61,12 @@ const QuizList = function(props) {
                 method="POST"
                 className="quizForm"
             >
-                <label htmlFor="name">Submission Type: </label>
-                <input id="quizSubmitType{quiz.name}" type="text" name="name" placeholder="Submission Type" value={quiz.name} />
-                <label htmlFor="age">Submission Value: </label>
-                <input id="quizSubmitValue{quiz.name}" type="text" name="age" placeholder="Submission Value" value={quiz.age} />
-                <label htmlFor="level">Additional Values: </label>
-                <input id="quizAdditionalValue{quiz.name}" type="text" name="level" placeholder="Additional Values" value={quiz.level} />
+                <label htmlFor="quizCorrect">Submission Type: </label>
+                <input id="quizSubmitType{quiz.quizCorrect}" type="text" name="quizCorrect" placeholder="Submission Type" value={quiz.quizCorrect} />
+                <label htmlFor="quizChoice">Submission Value: </label>
+                <input id="quizSubmitValue{quiz.quizChoice}" type="text" name="quizChoice" placeholder="Submission Value" value={quiz.quizChoice} />
+                <label htmlFor="quizSong">Additional Values: </label>
+                <input id="quizAdditionalValue{quiz.quizSong}" type="text" name="quizSong" placeholder="Additional Values" value={quiz.quizSong} />
                 <input type="hidden" name="_csrf" value={props.csrf} />
                 <input className="makeQuizSubmit" type="submit" value="Make Quiz" />
             </form>

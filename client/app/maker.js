@@ -36,9 +36,6 @@ const QuizForm = (props) => {
             <input type="hidden" name="_csrf" value={props.csrf} />
             <input className="makeQuizSubmit" type="submit" value="Make Quiz" />
         </form>
-            quizCorrect: doc.quizCorrect,
-            quizChoice: doc.quizChoice,
-            quizSong: doc.quizSong,
 
     );
 };

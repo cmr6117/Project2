@@ -31,11 +31,12 @@ const makeQuiz = (req, res) => {
         return res.status(400).json({ error: 'All fields are required' });
     }
     
+    let quizVictory = (req.body.quizCorrect == req.body.quizChoice);
     const quizData = {
         quizCorrect: req.body.quizCorrect,
         quizChoice: req.body.quizChoice,
         quizSong: req.body.quizSong,
-        quizWon: (req.body.quizCorrect == req.body.quizChoice),
+        quizWon: quizVictory,
         owner: req.session.account._id,
     }
     

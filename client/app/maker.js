@@ -44,7 +44,7 @@ const QuizForm = (props) => {
 };
 
 const QuizList = function(props) {
-    if(props.quizzes.length === 0) {
+    if(props.quizzes.artistOptions.length === 0) {
         return (
             <div className="quizList">
                 <h3 className="emptyQuiz">No quizzes yet</h3>
@@ -52,7 +52,7 @@ const QuizList = function(props) {
         );
     }
     
-    const quizNodes = props.quizzes.map(function(quiz) {
+    const quizNodes = props.quizzes.artistOptions.map(function(option) {
         return (
             <form id="quizForm"
                 onSubmit={handleQuiz}
@@ -61,12 +61,8 @@ const QuizList = function(props) {
                 method="POST"
                 className="quizForm"
             >
-                <label htmlFor="quizCorrect">Submission Type: </label>
-                <input id="quizSubmitType{quiz.quizCorrect}" type="text" name="quizCorrect" placeholder="Submission Type" value={quiz.quizCorrect} />
-                <label htmlFor="quizChoice">Submission Value: </label>
+                <input id="quizSubmitType{quiz.quizCorrect}" type="hidden" name="quizCorrect" placeholder="Submission Type" value={props.quizzes.correctArtist} />
                 <input id="quizSubmitValue{quiz.quizChoice}" type="text" name="quizChoice" placeholder="Submission Value" value={quiz.quizChoice} />
-                <label htmlFor="quizSong">Additional Values: </label>
-                <input id="quizAdditionalValue{quiz.quizSong}" type="text" name="quizSong" placeholder="Additional Values" value={quiz.quizSong} />
                 <input type="hidden" name="_csrf" value={props.csrf} />
                 <input className="makeQuizSubmit" type="submit" value="Make Quiz" />
             </form>
@@ -76,6 +72,7 @@ const QuizList = function(props) {
     return (
         <div className="quizList">
             {timer}
+            <h1>Song: {props.quizzes.song}</h1>
             {quizNodes}
         </div>
     );
@@ -94,9 +91,9 @@ const loadQuizzesFromServer = () => {
 const loadQuizDataFromServer = () => {
     sendAjax('GET', '/getQuizData', null, (data) => {
     console.dir('loading');
-//        ReactDOM.render(
-//            <QuizList quizzes={data.quizzes} />, document.querySelector("#quizzes")
-//        );
+    ReactDOM.render(
+        <QuizList quizzes={data} />, document.querySelector("#quizzes")
+    );
     console.dir(data);
     });
 };
@@ -129,7 +126,7 @@ const everyFiveSeconds = () => {
 
 $(document).ready(function() {
     getToken();
-    setInterval(everySecond, 1000);
+    //setInterval(everySecond, 1000);
     //setInterval(everyFiveSeconds, 5000);
     loadQuizDataFromServer();
 });

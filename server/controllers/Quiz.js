@@ -82,7 +82,8 @@ const getQuizData = (request, response) => {
     
     let artistsForQuiz = [];
     for(let i = 0; i < 4; i++){
-        let currentArtist = artistChoice.splice(Math.floor(Math.random()*artistChoice.length), 1)[0];
+        let artistNum = Math.floor(Math.random()*artistChoice.length);
+        let currentArtist = artistChoice.splice(artistNum, 1)[0];
         artistsForQuiz.push(currentArtist);
     }
 

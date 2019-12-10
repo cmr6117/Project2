@@ -145,10 +145,12 @@ nav:nth-child(1) {
 }
 
 .mainForm {
-    height: 300px;
+    height: 120px;
     width: 350px;
     margin: 0 auto;
-    padding-top: 350px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 80px;
     font-size: 1.2em;
 }
 
@@ -279,7 +281,15 @@ nav:nth-child(1) {
     margin-bottom:10px;
 }
 
-.quizList{
+.quizList, .mainForm{
     border-radius: 20px;
     background-image: linear-gradient(rgb(125, 125, 150), rgba(125,125,150,0));
+}
+
+input[type=text],input[type=password]{
+    background-image: linear-gradient(rgba(125, 125, 150, .1), rgba(125,125,150,0.5));
+    border-width: 0;
+}
+label{
+    margin-bottom: 10px;
 }

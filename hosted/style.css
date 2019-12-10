@@ -278,3 +278,8 @@ nav:nth-child(1) {
 .quiz:last-child {
     margin-bottom:10px;
 }
+
+.quizList{
+    border-radius: 20px;
+    background-image: linear-gradient(rgb(125, 125, 150), rgba(125,125,150,0));
+}

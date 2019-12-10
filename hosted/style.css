@@ -71,21 +71,15 @@ nav:nth-child(1) {
 .quizForm {
     border: 2px solid #338acc;
     height: 35px;
-    width: 800px;
+    width: 600px;
     margin-top:0px;
     padding-top:10px;
-    background-color: rgba(200,100,100,0.9);
     border-bottom-right-radius: 4px;
     border-top-right-radius: 4px;
 }
 
-.quizList {
-    background-color: aliceblue;
-}
-
 .quizForm label {
     display: inline-block;
-    width: 75px;
     margin-left: 10px;
     font-size: 1.2em;
     float: left;
@@ -97,13 +91,35 @@ nav:nth-child(1) {
 }
 
 .quizForm{
-    width: auto;
+    width: 80%;
     padding: 0;
     border: 0;
+    animation: shake 1.5s;
+    animation-iteration-count: infinite;
+    display: inline-block;
+    border-radius: 20px;
+}
+
+.quizForm:hover{
+    animation: none;
+}
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(-1deg); }
+    20% { transform: rotate(1deg); }
+    30% { transform: rotate(0deg); }
+    40% { transform: rotate(1deg); }
+    50% { transform: rotate(-1deg); }
+    60% { transform: rotate(0deg); }
+    70% { transform: rotate(-1deg); }
+    80% { transform: rotate(1deg); }
+    90% { transform: rotate(0deg); }
+    100% { transform: rotate(-1deg); }
 }
 
 .quizForm input{
-    width: 100%;
+    width: 80%;
     height: 100%;
     border: 0;
 }
@@ -112,7 +128,7 @@ nav:nth-child(1) {
 .makeQuizSubmit {
     transition: background-color 0.4s ease;
     display: inline;
-    width: 90px;
+    width: 80px;
     background-color: rgba(200,100,100,0.9);
     border-radius: 2px;
     color: white;
@@ -230,8 +246,7 @@ nav:nth-child(1) {
 #quizzes {
     width: 40%;
     min-width: 400px;
-    border: 2px solid rgba(200,100,100,0.9);
-    border-radius: 4px;
+    border-radius: 20px;
     margin: 0 auto;
     margin-top: 100px;
 }

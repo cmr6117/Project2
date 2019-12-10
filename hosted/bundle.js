@@ -1,57 +1,37 @@
 "use strict";
 
+var timer = 50;
+var recoveryTimer = 0;
+var csrfToken = void 0;
+
 var handleQuiz = function handleQuiz(e) {
     e.preventDefault();
 
+    console.dir(e.target.id);
+
     $("#quizMessage").animate({ width: 'hide' }, 350);
 
-    if ($("#quizSubmitType").val() == '' || $("#quizSubmitValue").val() == '' || $("#quizAdditionalValue").val() == '') {
-        handleError("RAWR! All fields are required");
-        return false;
-    }
+    var form = e.target;
+    console.dir(form.action);
 
-    sendAjax('POST', $("#quizForm").attr("action"), $("#quizForm").serialize(), function () {
-        loadQuizzesFromServer();
+    var data = {
+        quizCorrect: e.target.querySelector("#quizCorrect").value,
+        quizSong: e.target.querySelector("#quizSong").value,
+        quizChoice: e.target.querySelector("#quizChoice").value,
+        _csrf: csrfToken
+    };
+
+    console.dir(data);
+
+    sendAjax('POST', form.action, data, function () {
+        loadQuizDataFromServer();
     });
 
     return false;
 };
 
-var QuizForm = function QuizForm(props) {
-    return React.createElement(
-        "form",
-        { id: "quizForm",
-            onSubmit: handleQuiz,
-            name: "quizForm",
-            action: "/maker",
-            method: "POST",
-            className: "quizForm"
-        },
-        React.createElement(
-            "label",
-            { htmlFor: "name" },
-            "Submission Type: "
-        ),
-        React.createElement("input", { id: "quizSubmitType", type: "text", name: "name", placeholder: "Submission Type" }),
-        React.createElement(
-            "label",
-            { htmlFor: "age" },
-            "Submission Value: "
-        ),
-        React.createElement("input", { id: "quizSubmitValue", type: "text", name: "age", placeholder: "Submission Value" }),
-        React.createElement(
-            "label",
-            { htmlFor: "level" },
-            "Additional Values: "
-        ),
-        React.createElement("input", { id: "quizAdditionalValue", type: "text", name: "level", placeholder: "Additional Values" }),
-        React.createElement("input", { type: "hidden", name: "_csrf", value: props.csrf }),
-        React.createElement("input", { className: "makeQuizSubmit", type: "submit", value: "Make Quiz" })
-    );
-};
-
 var QuizList = function QuizList(props) {
-    if (props.quizzes.length === 0) {
+    if (props.artistOptions.length === 0) {
         return React.createElement(
             "div",
             { className: "quizList" },
@@ -63,77 +43,71 @@ var QuizList = function QuizList(props) {
         );
     }
 
-    var quizNodes = props.quizzes.map(function (quiz) {
+    var quizNodes = props.artistOptions.map(function (option) {
+        console.log('option', option);
         return React.createElement(
             "form",
-            { id: "quizForm",
+            { id: "quizForm" + option,
                 onSubmit: handleQuiz,
                 name: "quizForm",
                 action: "/maker",
                 method: "POST",
                 className: "quizForm"
             },
-            React.createElement(
-                "label",
-                { htmlFor: "name" },
-                "Submission Type: "
-            ),
-            React.createElement("input", { id: "quizSubmitType{quiz.name}", type: "text", name: "name", placeholder: "Submission Type", value: quiz.name }),
-            React.createElement(
-                "label",
-                { htmlFor: "age" },
-                "Submission Value: "
-            ),
-            React.createElement("input", { id: "quizSubmitValue{quiz.name}", type: "text", name: "age", placeholder: "Submission Value", value: quiz.age }),
-            React.createElement(
-                "label",
-                { htmlFor: "level" },
-                "Additional Values: "
-            ),
-            React.createElement("input", { id: "quizAdditionalValue{quiz.name}", type: "text", name: "level", placeholder: "Additional Values", value: quiz.level }),
-            React.createElement("input", { type: "hidden", name: "_csrf", value: props.csrf }),
-            React.createElement("input", { className: "makeQuizSubmit", type: "submit", value: "Make Quiz" })
-        )
-        /*
-        <div key={quiz._id} className="quiz">
-            <h3 className="quizSubmitType"> Name: {quiz.name} </h3>
-            <h3 className="quizSubmitValue"> Age: {quiz.age} </h3>
-            <h3 className="quizAdditionalValue"> Level: {quiz.level} </h3>
-        </div>
-        */
-        ;
+            React.createElement("input", { id: "quizCorrect", type: "hidden", name: "quizCorrect", value: props.correct }),
+            React.createElement("input", { id: "quizSong", type: "hidden", name: "quizSong", value: props.song }),
+            React.createElement("input", { id: "quizChoice", type: "submit", name: "quizChoice", value: option })
+        );
     });
 
     return React.createElement(
         "div",
         { className: "quizList" },
+        timer,
+        React.createElement(
+            "h1",
+            null,
+            "Song: ",
+            props.song
+        ),
         quizNodes
     );
 };
 
 var loadQuizzesFromServer = function loadQuizzesFromServer() {
-    sendAjax('GET', '/getQuizzes', null, function (data) {
-        console.dir('loading');
-        ReactDOM.render(React.createElement(QuizList, { quizzes: data.quizzes }), document.querySelector("#quizzes"));
-    });
+    //sendAjax('GET', '/getQuizzes', null, (data) => {
+    //  console.log('quiz data', data.quizzes);
+    //    ReactDOM.render(
+    //        <QuizList artistOptions={data.quizzes} />, document.querySelector("#quizzes")
+    //    );
+    //  console.dir('finished loading');
+    //});
 };
 
-var setup = function setup(csrf) {
-    ReactDOM.render(React.createElement(QuizForm, { csrf: csrf }), document.querySelector("#makeQuiz"));
-
-    ReactDOM.render(React.createElement(QuizForm, { quizzes: [] }), document.querySelector("#quizzes"));
-
-    loadQuizzesFromServer();
+var loadQuizDataFromServer = function loadQuizDataFromServer() {
+    sendAjax('GET', '/getQuizData', null, function (data) {
+        ReactDOM.render(React.createElement(QuizList, { artistOptions: data.artistOptions, song: data.song, correct: data.correctArtist }), document.querySelector("#quizzes"));
+    });
 };
 
 var getToken = function getToken() {
     sendAjax('GET', '/getToken', null, function (result) {
-        setup(result.csrfToken);
+        csrfToken = result.csrfToken;
     });
 };
 
+var everySecond = function everySecond() {
+    timer--;
+    loadQuizzesFromServer();
+};
+
+var everyFiveSeconds = function everyFiveSeconds() {};
+
 $(document).ready(function () {
     getToken();
+    //setInterval(everySecond, 1000);
+    //setInterval(everyFiveSeconds, 5000);
+    loadQuizDataFromServer();
 });
 "use strict";
 

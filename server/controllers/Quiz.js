@@ -27,6 +27,7 @@ const makerPage = (req, res) => {
 };
 
 const makeQuiz = (req, res) => {
+  console.dir(req.body);
     if (!req.body.quizCorrect || !req.body.quizChoice || !req.body.quizSong){
         return res.status(400).json({ error: 'All fields are required' });
     }

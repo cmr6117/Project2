@@ -147,6 +147,8 @@ nav:nth-child(1) {
     padding-bottom: 50px;
     margin-top: 80px;
     font-size: 1.2em;
+    color: white;
+    text-shadow: 2px 2px 2px black;
 }
 
 .mainForm h3 {

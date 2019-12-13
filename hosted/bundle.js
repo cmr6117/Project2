@@ -78,7 +78,7 @@ var loadQuizzesFromServer = function loadQuizzesFromServer() {
     //sendAjax('GET', '/getQuizzes', null, (data) => {
     //  console.log('quiz data', data.quizzes);
     //    ReactDOM.render(
-    //        <QuizList artistOptions={data.quizzes} />, document.querySelector("#quizList")
+    //        <QuizList artistOptions={data.quizzes} />, document.querySelector("#quizzes")
     //    );
     //  console.dir('finished loading');
     //});
@@ -86,7 +86,7 @@ var loadQuizzesFromServer = function loadQuizzesFromServer() {
 
 var loadQuizDataFromServer = function loadQuizDataFromServer() {
     sendAjax('GET', '/getQuizData', null, function (data) {
-        ReactDOM.render(React.createElement(QuizList, { artistOptions: data.artistOptions, song: data.song, correct: data.correctArtist }), document.querySelector("#quizList"));
+        ReactDOM.render(React.createElement(QuizList, { artistOptions: data.artistOptions, song: data.song, correct: data.correctArtist }), document.querySelector("#quizzes"));
     });
 };
 

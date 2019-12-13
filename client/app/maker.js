@@ -57,10 +57,12 @@ const QuizList = function(props) {
     });
     
     return (
-        <div id="timerDiv">{timer}</div>
-        <div id="recoveryDiv">{recovery}</div>
-        <h1>Song: {props.song}</h1>
-        {quizNodes}
+        <div className="quizList">
+            <div id="timerDiv"></div>
+            <div id="recoveryDiv">{recovery}</div>
+            <h1>Song: {props.song}</h1>
+            {quizNodes}
+        </div>
     );
 };
 
@@ -76,7 +78,7 @@ const loadQuizzesFromServer = () => {
     //sendAjax('GET', '/getQuizzes', null, (data) => {
     //  console.log('quiz data', data.quizzes);
     //    ReactDOM.render(
-    //        <QuizList artistOptions={data.quizzes} />, document.querySelector("#quizList")
+    //        <QuizList artistOptions={data.quizzes} />, document.querySelector("#quizzes")
     //    );
     //  console.dir('finished loading');
     //});
@@ -87,14 +89,14 @@ const loadQuizDataFromServer = () => {
         sendAjax('GET', '/getQuizData', null, (data) => {
             ReactDOM.render(
                 <QuizList artistOptions={data.artistOptions} song={data.song} correct={data.correctArtist}/>,
-              document.querySelector("#quizList")
+              document.querySelector("#quizzes")
             );
         });
     }
     else{
         sendAjax('GET', '/getQuizzes', null, (data) => {
             ReactDOM.render(
-                <QuizList artistOptions={data.quizzes} />, document.querySelector("#quizList")
+                <QuizList artistOptions={data.quizzes} />, document.querySelector("#quizzes")
             );
         });
     }

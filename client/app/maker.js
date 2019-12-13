@@ -129,8 +129,8 @@ const everySecond = () => {
 
 $(document).ready(function() {
     getToken();
-    setInterval(everySecond, 1000);
     loadQuizDataFromServer();
+    setInterval(everySecond, 1000);
 });
 
 

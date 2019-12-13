@@ -77,7 +77,7 @@ const loadQuizzesFromServer = () => {
 };
 
 const loadQuizDataFromServer = () => {
-    if(viewingLog){
+    if(!viewingLog){
         sendAjax('GET', '/getQuizData', null, (data) => {
             ReactDOM.render(
                 <QuizList artistOptions={data.artistOptions} song={data.song} correct={data.correctArtist}/>,
@@ -86,7 +86,11 @@ const loadQuizDataFromServer = () => {
         });
     }
     else{
-        
+        sendAjax('GET', '/getQuizzes', null, (data) => {
+            ReactDOM.render(
+                <QuizList artistOptions={data.quizzes} />, document.querySelector("#quizzes")
+            );
+        });
     }
 };
 

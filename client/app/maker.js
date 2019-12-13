@@ -1,5 +1,7 @@
-let timer = 50;
-let recoveryTimer = 0;
+let timer = 5;
+let recovery = true;
+let viewingLog = false;
+let backgroundColor = "linear-gradient(rgb(125, 125, 150), rgba(125,125,150,0))";
 let csrfToken;
 
 const handleQuiz = (e) => {
@@ -31,7 +33,7 @@ const handleQuiz = (e) => {
 const QuizList = function(props) {
     if(props.artistOptions.length === 0) {
         return (
-            <div className="quizList">
+            <div className="quizList" style="backgroundImage:{backgroundColor}">
                 <h3 className="emptyQuiz">No quizzes yet</h3>
             </div>
         );
@@ -56,7 +58,8 @@ const QuizList = function(props) {
     
     return (
         <div className="quizList">
-            {timer}
+            <div id="timerDiv">{timer}</div>
+            <div id="recoveryDiv">{recovery}</div>
             <h1>Song: {props.song}</h1>
             {quizNodes}
         </div>
@@ -74,12 +77,17 @@ const loadQuizzesFromServer = () => {
 };
 
 const loadQuizDataFromServer = () => {
-    sendAjax('GET', '/getQuizData', null, (data) => {
-    ReactDOM.render(
-        <QuizList artistOptions={data.artistOptions} song={data.song} correct={data.correctArtist}/>,
-      document.querySelector("#quizzes")
-    );
-    });
+    if(viewingLog){
+        sendAjax('GET', '/getQuizData', null, (data) => {
+            ReactDOM.render(
+                <QuizList artistOptions={data.artistOptions} song={data.song} correct={data.correctArtist}/>,
+              document.querySelector("#quizzes")
+            );
+        });
+    }
+    else{
+        
+    }
 };
 
 const getToken = () => {
@@ -89,17 +97,24 @@ const getToken = () => {
 };
 
 const everySecond = () => {
-    timer--;
-    loadQuizzesFromServer();
+    if(viewingLog){
+        timer--;
+    }
+    if(timer < 0){
+        recovery = !recovery;
+        if(recovery){
+            timer = 5;
+        }
+        else{
+            timer = 10;
+        }
+    }
 };
 
-const everyFiveSeconds = () => {
-};
 
 $(document).ready(function() {
     getToken();
-    //setInterval(everySecond, 1000);
-    //setInterval(everyFiveSeconds, 5000);
+    setInterval(everySecond, 1000);
     loadQuizDataFromServer();
 });
 

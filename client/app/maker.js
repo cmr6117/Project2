@@ -58,13 +58,21 @@ const QuizList = function(props) {
     
     return (
         <div className="quizList">
-            <div id="timerDiv">{timer}</div>
+            <div id="timerDiv"></div>
             <div id="recoveryDiv">{recovery}</div>
             <h1>Song: {props.song}</h1>
             {quizNodes}
         </div>
     );
 };
+
+const Timer = function(props) {
+    return (
+        {timer}
+    );
+};
+
+
 
 const loadQuizzesFromServer = () => {
     //sendAjax('GET', '/getQuizzes', null, (data) => {
@@ -101,6 +109,9 @@ const getToken = () => {
 };
 
 const everySecond = () => {
+    ReactDOM.render(
+        <Timer />, document.querySelector("#timerDiv")
+    );
     if(viewingLog){
         timer--;
     }

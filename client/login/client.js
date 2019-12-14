@@ -176,7 +176,9 @@ const getToken = () => {
 $(document).ready(function() {
     getToken();
     $("#loginForm").ready({width:'toggle'});
-    $("#loginForm").animate({width:'toggle'},250);
+    setTimeout(function(){
+        $("#loginForm").animate({width:'toggle'},250);
+    }, 300);
 });
 
 

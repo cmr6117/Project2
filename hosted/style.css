@@ -142,7 +142,6 @@ nav:nth-child(1) {
 
 .mainForm {
     height: 120px;
-    width: 350px;
     margin: 0 auto;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -150,6 +149,18 @@ nav:nth-child(1) {
     font-size: 1.2em;
     color: white;
     text-shadow: 2px 2px 2px black;
+    animation-duration: 3s;
+    animation-name: widenUp;
+}
+
+@keyframes widenUp {
+  from {
+    width: 0px; 
+  }
+
+  to {
+    width: 350px;
+  }
 }
 
 .mainForm h3 {

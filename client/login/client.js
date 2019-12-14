@@ -175,10 +175,6 @@ const getToken = () => {
 
 $(document).ready(function() {
     getToken();
-    let loginForm = $("#loginForm");
-    let loginFormWidth = loginForm.offsetWidth;
-    loginForm.style.width = 0;
-    loginForm.animate({width:{loginFormWidth}},300);
 });
 
 

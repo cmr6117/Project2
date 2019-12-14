@@ -175,6 +175,8 @@ const getToken = () => {
 
 $(document).ready(function() {
     getToken();
+    $("#loginForm").animate({width:'toggle'},0);
+    $("#loginForm").animate({width:'toggle'},250);
 });
 
 

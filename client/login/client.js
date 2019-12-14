@@ -177,8 +177,11 @@ $(document).ready(function() {
     getToken();
     $("#loginForm").ready({width:'toggle'});
     setTimeout(function(){
-        $("#loginForm").animate({width:'toggle'},250);
-    }, 300);
+        $("#loginForm").animate({width:'toggle'},1);
+        setTimeout(function(){
+            $("#loginForm").animate({width:'toggle'},250);
+        }, 300);
+    }, 1);
 });
 
 

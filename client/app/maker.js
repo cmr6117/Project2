@@ -21,8 +21,7 @@ const handleQuiz = (e) => {
       _csrf: csrfToken,
     }
   
-    //console.dir(data);
-    console.dir(form.action);
+    console.dir(data);
     sendAjax('POST', form.action, data, () => {
         loadQuizDataFromServer();
     });

@@ -60,7 +60,7 @@ const QuizList = function(props) {
         <div className="quizList">
             <div id="timerDiv"></div>
             <div id="recoveryDiv">{recovery}</div>
-            <h1>Song: {props.song}</h1>
+            <h1>The song "<span class="redText">{props.song}</span>" is attributed to what artist?</h1>
             {quizNodes}
         </div>
     );

@@ -348,3 +348,8 @@ label{
 :focus, {
   outline: none;
 }
+
+span.redText {
+    color: firebrick;
+    font-style: italic;
+}

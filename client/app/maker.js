@@ -108,7 +108,7 @@ const getToken = () => {
 
 const everySecond = () => {
     ReactDOM.render(
-        <Timer />, document.querySelector("#timerDiv")
+        <QuizList timer={timer} />, document.querySelector("#timerDiv")
     );
     if(viewingLog){
         timer--;

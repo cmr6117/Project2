@@ -134,23 +134,3 @@ $(document).ready(function() {
     setInterval(everySecond, 1000);
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -102,7 +102,7 @@ const loadQuizDataFromServer = () => {
 
 const getToken = () => {
     sendAjax('GET', '/getToken', null, (result) => {
-        csrfToken = result.csrfToken; 
+        csrfToken = result.csrfToken;
     });
 };
 

@@ -114,7 +114,7 @@ const everySecond = () => {
             <Timer artistOptions={data.quizzes} />, document.querySelector("#timerSection")
         );
     });
-    if(viewingLog){
+    if(!viewingLog){
         timer--;
     }
     if(timer < 0){
@@ -132,6 +132,9 @@ const everySecond = () => {
 $(document).ready(function() {
     getToken();
     loadQuizDataFromServer();
+    $("#switchViews").click(function() {
+        viewingLog = !viewingLog;
+    });
     setInterval(everySecond, 1000);
 });
 

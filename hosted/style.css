@@ -150,9 +150,6 @@ nav:nth-child(1) {
     font-size: 1.2em;
     color: white;
     text-shadow: 2px 2px 2px black;
-}
-
-#loginForm{
     animation-duration: 0.5s;
     animation-name: widenUp;
     animation-timing-function: ease-out;

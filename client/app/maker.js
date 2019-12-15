@@ -22,7 +22,7 @@ const handleQuiz = (e) => {
     }
   
     //console.dir(data);
-    
+    console.dir(form.action);
     sendAjax('POST', form.action, data, () => {
         loadQuizDataFromServer();
     });

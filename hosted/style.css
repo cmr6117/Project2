@@ -153,14 +153,14 @@ nav:nth-child(1) {
 }
 
 #loginForm{
-    animation-duration: 3s;
+    animation-duration: 0.5s;
     animation-name: widenUp;
     animation-timing-function: ease-out;
 }
 
 @keyframes widenUp {
   from {
-    width: 0px;
+    width: 290px;
     transform: scaleX(0.5);
     opacity: 0%; 
   }

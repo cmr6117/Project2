@@ -7,12 +7,12 @@ let csrfToken;
 const handleQuiz = (e) => {
     e.preventDefault();
   
-  console.dir(e.target.id);
+    //console.dir(e.target.id);
     
     $("#quizMessage").animate({width:'hide'},350);
   
     let form = e.target;
-    console.dir(form.action);
+    //console.dir(form.action);
   
     let data = {
       quizCorrect: e.target.querySelector("#quizCorrect").value,
@@ -21,7 +21,7 @@ const handleQuiz = (e) => {
       _csrf: csrfToken,
     }
   
-    console.dir(data);
+    //console.dir(data);
     
     sendAjax('POST', form.action, data, () => {
         loadQuizDataFromServer();
@@ -40,7 +40,7 @@ const QuizList = function(props) {
     }
   
     const quizNodes = props.artistOptions.map(function(option) {
-      console.log('option', option)
+        //console.log('option', option)
         return (
             <form id={`quizForm${option}`}
                 onSubmit={handleQuiz}
@@ -60,7 +60,7 @@ const QuizList = function(props) {
         <div className="quizList">
             <div id="timerDiv"></div>
             <div id="recoveryDiv">{recovery}</div>
-            <h1>The song "<span id="redText">{props.song}</span>" is attributed to what artist?</h1>
+            <h1>The song "<span id="redText">{props.song}</span>" is most commonly attributed to which artist?</h1>
             {quizNodes}
         </div>
     );

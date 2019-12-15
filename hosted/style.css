@@ -161,6 +161,7 @@ nav:nth-child(1) {
 #loginForm > *{
     animation-duration: 3s;
     animation-name: widenUpContent;
+    overflow: auto;
 }
 
 @keyframes widenUp {

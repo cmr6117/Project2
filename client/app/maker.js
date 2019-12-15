@@ -62,6 +62,7 @@ const QuizList = function(props) {
             {quizNodes}
         </div>
     );
+};
 
 const Timer = function(props) {
     return (

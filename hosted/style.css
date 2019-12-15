@@ -158,26 +158,13 @@ nav:nth-child(1) {
     animation-timing-function: ease-out;
 }
 
-#loginForm > *{
-    animation-duration: 3s;
-    animation-name: widenUpContent;
-    overflow: auto;
-}
-
 @keyframes widenUp {
   from {
-    width: 0px; 
-  }
-  to {
-    width: 350px;
-  }
-}
-
-@keyframes widenUpContent {
-  from {
+    transform: scaleX(0.0);
     opacity: 0%; 
   }
   to {
+    transform: scaleX(1.0);
     opacity: 100%;
   }
 }

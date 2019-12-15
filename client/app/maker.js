@@ -58,8 +58,6 @@ const QuizList = function(props) {
     
     return (
         <div className="quizList">
-            <div id="timerDiv"></div>
-            <div id="recoveryDiv">{recovery}</div>
             <h1>The song "<span id="redText">{props.song}</span>" is most commonly attributed to which artist?</h1>
             {quizNodes}
         </div>

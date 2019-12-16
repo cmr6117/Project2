@@ -443,12 +443,12 @@ span#blueText {
     position: absolute;
 }
 
-.ad:nth-of-type(1){
+#ad1{
     top: 0px;
     left: 0px;
 }
 
-.ad:nth-of-type(2){
+#ad2{
     top: 0px;
     right: 0px;
 }

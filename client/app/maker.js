@@ -26,13 +26,7 @@ const handleQuiz = (e) => {
           _csrf: csrfToken,
         }
         
-        if(data.quizChoice == data.quizCorrect){
-            $("#quizForm" + data.quizCorrect).style.backgroundColor = "green";
-        }
-        else{
-            $("#quizForm" + data.quizCorrect).style.backgroundColor = "green";
-            $("#quizForm" + data.quizChoice).style.backgroundColor = "red";
-        }
+        
 
         console.dir(data);
         sendAjax('POST', form.action, data, () => {});

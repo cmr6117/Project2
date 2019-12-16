@@ -11,13 +11,6 @@ const handleQuiz = (e) => {
     if(!recovery){
         e.preventDefault();
 
-        recovery = true;
-        timer = 5;
-        victory = e.target.querySelector("#quizCorrect").value == e.target.querySelector("#quizChoice").value;
-        ReactDOM.render(
-            <QuizRecovery />, document.querySelector("#quizzes")
-        );
-        
         //console.dir(e.target.id);
 
         $("#quizMessage").animate({width:'hide'},350);
@@ -33,7 +26,14 @@ const handleQuiz = (e) => {
         }
         
         console.dir(data);
-        sendAjax('POST', form.action, data, () => {});
+        sendAjax('POST', form.action, data, () => {
+            recovery = true;
+            timer = 5;
+            victory = e.target.querySelector("#quizCorrect").value == e.target.querySelector("#quizChoice").value;
+            ReactDOM.render(
+                <QuizRecovery />, document.querySelector("#quizzes")
+            );
+        });
 
     }
     return false;

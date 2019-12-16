@@ -479,7 +479,6 @@ const artists = [
          "Twist And Shout",
          "Lucy In The Sky With Diamonds",
          "While My Guitar Gently Weeps",
-         "A Hard Day's Night",
          "Ticket To Ride",
          "Yellow Submarine"
       ]

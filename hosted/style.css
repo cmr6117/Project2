@@ -390,15 +390,26 @@ span#redText {
 }
 
 .incorrectLog, .correctLog{
+    margin: auto;
+    margin-bottom: 5px;
     width: 400px;
-    display: inline-block;
+    display: block;
     padding: 20px;
+    padding-bottom: 20px;
+    padding-top: 3px;
+    border-radius: 30px;
+    font-size: 10px;
+}
+
+.incorrectLog h3, .correctLog h3{
+    margin: 0px;
+    margin-top: 4px;
 }
 
 .incorrectLog{
-    background-image: linear-gradient(rgb(150, 125, 150), rgba(125,125,150,0));
+    background-image: linear-gradient(rgb(200, 150, 150), rgb(225, 175, 175), rgb(225, 175, 185), rgba(125,125,150,0));
 }
 
 .correctLog{
-    background-image: linear-gradient(rgb(125, 150, 150), rgba(125,125,150,0));
+    background-image: linear-gradient(rgb(150, 200, 150), rgb(175, 225, 175), rgb(175, 225, 185), rgba(125,125,150,0));
 }

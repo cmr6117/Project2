@@ -441,6 +441,9 @@ span#blueText {
     background-color: rgba(220,220,255,0.6);
     font-size: 15px;
     position: absolute;
+    animation-duration: 0.5s;
+    animation-name: widenUp;
+    animation-timing-function: ease-out;
 }
 
 #ad1{

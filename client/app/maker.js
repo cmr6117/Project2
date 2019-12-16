@@ -134,7 +134,7 @@ const everySecond = () => {
     ReactDOM.render(
         <PauseButton />, document.querySelector("#switchViews")
     );
-    
+
     if(timer < 0){
         recovery = !recovery;
         if(recovery){

@@ -388,3 +388,17 @@ span#redText {
 .quizList h1{
     margin-bottom: 50px;
 }
+
+.incorrectLog, .correctLog{
+    width: 400px;
+    display: inline-block;
+    padding: 20px;
+}
+
+.incorrectLog{
+    background-image: linear-gradient(rgb(150, 125, 150), rgba(125,125,150,0));
+}
+
+.correctLog{
+    background-image: linear-gradient(rgb(125, 150, 150), rgba(125,125,150,0));
+}

@@ -93,6 +93,7 @@ const QuizLog = function(props) {
                     <h3 className="logCorrect"> Correct Answer: {log.quizCorrect} </h3>
                     <h3 className="logChoice"> Your Choice: {log.quizChoice} </h3>
                 </div>
+                <br />
             );
         }
     });

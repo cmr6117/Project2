@@ -155,7 +155,7 @@ const QuizLog = function(props) {
 
 
 const Timer = function(props) {
-    if(timer > 0){
+    if(timer <= 0){
         return (
             <div className="timerDiv">
                 -

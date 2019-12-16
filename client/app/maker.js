@@ -200,6 +200,7 @@ const everySecond = () => {
 $(document).ready(function() {
     getToken();
     loadQuizDataFromServer();
+    $("#quizLog").animate({height:'hide'},350);
     $("#switchViews").click(function() {
         viewingLog = !viewingLog;
         sendAjax('GET', '/getQuizzes', null, (data) => {
@@ -207,6 +208,9 @@ $(document).ready(function() {
                 <QuizLog log={data.quizzes} />, document.querySelector("#quizLog")
             );
         });
+        $("#quizzes").animate({height:'hide'},350);
+        $("#timerSection").animate({height:'hide'},350);
+        $("#quizLog").animate({height:'hide'},350);
     });
     setInterval(everySecond, 1000);
 });

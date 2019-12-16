@@ -152,7 +152,13 @@ nav:nth-child(1) {
     text-shadow: 2px 2px 2px black;
 }
 
-.mainForm, #quizzes {
+.timerDiv {
+    position: relative;
+    top: -308px;
+    font-size: 30px;
+}
+
+.mainForm, #quizzes, .timerDiv {
     animation-duration: 0.5s;
     animation-name: widenUp;
     animation-timing-function: ease-out;

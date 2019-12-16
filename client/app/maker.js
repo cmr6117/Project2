@@ -4,7 +4,7 @@ let viewingLog = false;
 let backgroundColor = "linear-gradient(rgb(125, 125, 150), rgba(125,125,150,0))";
 let currentArtist = "";
 let currentSong = "";
-let victory = false;
+let victory = "";
 let csrfToken;
 
 const handleQuiz = (e) => {

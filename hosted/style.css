@@ -432,7 +432,7 @@ span#blueText {
     font-weight: bold;
 }
 
-.ad{
+#ad1, #ad2{
     padding-top: 200px;
     padding-bottom: 200px;
     width: 150px;
@@ -444,11 +444,11 @@ span#blueText {
 }
 
 #ad1{
-    top: 0px;
-    left: 0px;
+    top: 130px;
+    left: 400px;
 }
 
 #ad2{
-    top: 0px;
-    right: 0px;
+    top: 130px;
+    right: 400px;
 }

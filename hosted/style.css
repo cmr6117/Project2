@@ -166,13 +166,11 @@ nav:nth-child(1) {
 
 @keyframes widenUp {
   from {
-    width: 290px;
     transform: scaleX(0.9);
     transform: translateY(-100px);
     opacity: 0%; 
   }
   to {
-    width: 350px;
     transform: scaleX(1.0);
     transform: translateY(0px);
     opacity: 100%;

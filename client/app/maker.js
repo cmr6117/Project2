@@ -188,7 +188,7 @@ const PauseButton = function(props) {
 
 const Ad = function(props) {
     return (
-        <img src="/assets/img/bannerAd.jpg" alt="Banner Ad Placeholder"/>
+        <img src="/img/bannerAd.jpg" alt="Banner Ad Placeholder"/>
     );        
 };
 

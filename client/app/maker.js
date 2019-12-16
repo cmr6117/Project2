@@ -92,7 +92,6 @@ const loadQuizDataFromServer = () => {
                 <QuizList artistOptions={data.artistOptions} song={data.song} correct={data.correctArtist}/>,
               document.querySelector("#quizzes")
             );
-            console.dir(data);
             currentArtist = data.correctArtist;
             currentSong = data.song;
         });

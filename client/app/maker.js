@@ -32,7 +32,7 @@ const handleQuiz = (e) => {
 };
 
 const QuizList = function(props) {
-    currentArtist = props.correctArtist;
+    theCurrentArtist = props.correctArtist;
     currentSong = props.song;
     if(props.artistOptions.length === 0) {
         return (

@@ -129,6 +129,7 @@ const everySecond = () => {
                 "quizChoice": "Time's Up",
                 "_csrf": csrfToken
             }
+            console.dir(data);
             sendAjax('POST', document.querySelector(".quizForm").action, data, () => {});
             timer = 5;
         }

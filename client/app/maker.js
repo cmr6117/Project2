@@ -73,6 +73,17 @@ const Timer = function(props) {
     );
 };
 
+const PauseButton = function(props) {
+    if(viewingLog){
+        return (
+            <a>Resume</a>
+        );        
+    }
+    return (
+        <a>Pause</a>
+    );
+};
+
 
 
 const loadQuizzesFromServer = () => {
@@ -115,9 +126,15 @@ const everySecond = () => {
     ReactDOM.render(
         <Timer />, document.querySelector("#timerSection")
     );
+    <a>Switch Views</a>
+
     if(!viewingLog){
         timer--;
     }
+    ReactDOM.render(
+        <PauseButton />, document.querySelector("#switchViews")
+    );
+    
     if(timer < 0){
         recovery = !recovery;
         if(recovery){

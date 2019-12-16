@@ -135,7 +135,7 @@ const everySecond = () => {
         <PauseButton />, document.querySelector("#switchViews")
     );
 
-    if(timer < 0){
+    if(timer == 0){
         recovery = !recovery;
         if(recovery){
             let data = {

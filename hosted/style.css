@@ -389,7 +389,7 @@ span#redText {
     margin-bottom: 50px;
 }
 
-.incorrectLog, .correctLog{
+.incorrectLog, .correctLog, .logHeader{
     margin: auto;
     margin-bottom: 5px;
     width: 400px;
@@ -401,7 +401,7 @@ span#redText {
     font-size: 10px;
 }
 
-.incorrectLog h3, .correctLog h3{
+.incorrectLog h3, .correctLog h3, .logHeader h3{
     margin: 0px;
     margin-top: 4px;
 }
@@ -413,3 +413,8 @@ span#redText {
 .correctLog{
     background-image: linear-gradient(rgb(150, 200, 150), rgb(175, 225, 175), rgb(175, 225, 185), rgba(125,125,150,0));
 }
+
+.logHeader{
+    background-image: linear-gradient(rgb(150, 150, 150), rgb(175, 175, 175), rgb(175, 175, 185), rgba(150,150,150,0));
+}
+

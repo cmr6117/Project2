@@ -71,7 +71,9 @@ const QuizLog = function(props) {
     if(props.log.length === 0) {
         return (
             <div className="logList">
-                <h3 className="emptyLog">No quizzes answered yet</h3>
+                <div class="logHeader">
+                    <h3 className="emptyLog">No quizzes answered yet</h3>
+                </div>
             </div>
         );
     }
@@ -99,6 +101,7 @@ const QuizLog = function(props) {
     
     return (
         <div className="logList">
+            <div class="logHeader"></div>
             {logNodes}
         </div>
     );

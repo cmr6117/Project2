@@ -101,7 +101,7 @@ const QuizLog = function(props) {
     
     return (
         <div className="logList">
-            <div class="logHeader"></div>
+            <div className="logHeader">Answer Log</div>
             {logNodes}
         </div>
     );

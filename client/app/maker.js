@@ -27,19 +27,21 @@ const handleQuiz = (e) => {
         
         console.dir(data);
         sendAjax('POST', form.action, data, () => {
-            recovery = true;
-            timer = 5;
             victory = e.target.querySelector("#quizCorrect").value == e.target.querySelector("#quizChoice").value;
-            ReactDOM.render(
-                <QuizRecovery />, document.querySelector("#quizzes")
-            ); 
+            handleRecovery();
         });
 
     }
     return false;
 };
 
-
+const handleRecovery = () => {
+    recovery = true;
+    timer = 5;
+    ReactDOM.render(
+        <QuizRecovery />, document.querySelector("#quizzes")
+    ); 
+};
 
 const QuizList = function(props) {
     if(props.artistOptions.length === 0) {
@@ -197,7 +199,6 @@ const everySecond = () => {
     if(timer < 0){
         recovery = !recovery;
         if(recovery){
-            timer = 5;
             let data = {
                 "quizCorrect": currentArtist,
                 "quizSong": currentSong,
@@ -206,6 +207,8 @@ const everySecond = () => {
             }
             console.dir(data);
             sendAjax('POST', document.querySelector(".quizForm").action, data, () => {});
+            victory = false;
+            handleRecovery();
         }
         else{
             timer = 10;

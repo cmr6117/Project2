@@ -8,30 +8,28 @@ let victory = false;
 let csrfToken;
 
 const handleQuiz = (e) => {
-    if(!recovery){
-        e.preventDefault();
+    e.preventDefault();
 
-        //console.dir(e.target.id);
+    //console.dir(e.target.id);
 
-        $("#quizMessage").animate({width:'hide'},350);
+    $("#quizMessage").animate({width:'hide'},350);
 
-        let form = e.target;
-        //console.dir(form.action);
+    let form = e.target;
+    //console.dir(form.action);
 
-        let data = {
-          quizCorrect: e.target.querySelector("#quizCorrect").value,
-          quizSong: e.target.querySelector("#quizSong").value,
-          quizChoice: e.target.querySelector("#quizChoice").value,
-          _csrf: csrfToken,
-        }
-        
-        console.dir(data);
-        sendAjax('POST', form.action, data, () => {
-            victory = e.target.querySelector("#quizCorrect").value == e.target.querySelector("#quizChoice").value;
-            handleRecovery();
-        });
-
+    let data = {
+      quizCorrect: e.target.querySelector("#quizCorrect").value,
+      quizSong: e.target.querySelector("#quizSong").value,
+      quizChoice: e.target.querySelector("#quizChoice").value,
+      _csrf: csrfToken,
     }
+
+    console.dir(data);
+    sendAjax('POST', form.action, data, () => {
+        victory = e.target.querySelector("#quizCorrect").value == e.target.querySelector("#quizChoice").value;
+        handleRecovery();
+    });
+
     return false;
 };
 

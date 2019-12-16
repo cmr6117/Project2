@@ -2,7 +2,7 @@ let timer = 5;
 let recovery = true;
 let viewingLog = false;
 let backgroundColor = "linear-gradient(rgb(125, 125, 150), rgba(125,125,150,0))";
-let currentArtist = "";
+let theCurrentArtist = "";
 let currentSong = "";
 let csrfToken;
 
@@ -124,7 +124,7 @@ const everySecond = () => {
         recovery = !recovery;
         if(recovery){
             let data = {
-                "quizCorrect": currentArtist,
+                "quizCorrect": theCurrentArtist,
                 "quizSong": currentSong,
                 "quizChoice": "Time's Up",
                 "_csrf": csrfToken

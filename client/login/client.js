@@ -122,7 +122,7 @@ const ChangePassWindow = (props) => {
 
 const AboutWindow = (props) => {
     return (
-        <div>This is a app for creating logs.</div>
+        <div className="mainForm">This is a app for creating logs.</div>
     );
 };
 

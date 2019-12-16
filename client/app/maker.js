@@ -7,27 +7,37 @@ let currentSong = "";
 let csrfToken;
 
 const handleQuiz = (e) => {
-    e.preventDefault();
-  
-    recovery = true;
-    timer = 5;
-    //console.dir(e.target.id);
-    
-    $("#quizMessage").animate({width:'hide'},350);
-  
-    let form = e.target;
-    //console.dir(form.action);
-  
-    let data = {
-      quizCorrect: e.target.querySelector("#quizCorrect").value,
-      quizSong: e.target.querySelector("#quizSong").value,
-      quizChoice: e.target.querySelector("#quizChoice").value,
-      _csrf: csrfToken,
+    if(!recovery){
+        e.preventDefault();
+
+        recovery = true;
+        timer = 5;
+        //console.dir(e.target.id);
+
+        $("#quizMessage").animate({width:'hide'},350);
+
+        let form = e.target;
+        //console.dir(form.action);
+
+        let data = {
+          quizCorrect: e.target.querySelector("#quizCorrect").value,
+          quizSong: e.target.querySelector("#quizSong").value,
+          quizChoice: e.target.querySelector("#quizChoice").value,
+          _csrf: csrfToken,
+        }
+        
+        if(data.quizChoice == data.quizCorrect){
+            $("#quizForm" + data.quizCorrect).style.backgroundColor = "green";
+        }
+        else{
+            $("#quizForm" + data.quizCorrect).style.backgroundColor = "green";
+            $("#quizForm" + data.quizChoice).style.backgroundColor = "red";
+        }
+
+        console.dir(data);
+        sendAjax('POST', form.action, data, () => {});
+
     }
-  
-    console.dir(data);
-    sendAjax('POST', form.action, data, () => {});
-    
     return false;
 };
 

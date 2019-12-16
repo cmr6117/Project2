@@ -435,5 +435,9 @@ span#blueText {
 .ad{
     padding-top: 200px;
     padding-bottom: 200px;
-    border: 2px "aliceblue";
+    border-style: solid;
+    border-width: 5px;
+    background-color: aliceblue;
+    font-size: 15px;
+    position: relative;
 }

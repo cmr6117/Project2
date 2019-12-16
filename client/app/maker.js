@@ -236,7 +236,7 @@ const everySecond = () => {
             }
             console.dir(data);
             sendAjax('POST', document.querySelector(".quizForm").action, data, () => {});
-            victory = false;
+            victory = "Time's Up";
             handleRecovery();
         }
         else{

@@ -4,7 +4,7 @@ const handleLogin = (e) => {
     $("quizMessage").animate({width:'hide'},350);
     
     if($("#user").val() == '' || $("#pass").val() == '') {
-        handleError("RAWR! Username or password is empty");
+        handleError("Username or password is empty");
         return false;
     }
     
@@ -21,13 +21,13 @@ const handleSignup = (e) => {
     $("#quizMessage").animate({width:'hide'},350);
     
     if($("#user").val() == '' || $("#pass").val() == '' || $("#pass2").val() == ''){
-        handleError("RAWR! All fields are required");
+        handleError("All fields are required");
         return false;
     }
     
     
     if($("#pass").val() !== $("#pass2").val()) {
-        handleError("RAWR! Passwords do not match");
+        handleError("Passwords do not match");
         return false;
     }
     
@@ -42,13 +42,13 @@ const handleChangePass = (e) => {
     $("#quizMessage").animate({width:'hide'},350);
     
     if($("#user").val() == '' || $("#pass").val() == '' || $("#pass2").val() == '' || $("#oldpass").val() == ''){
-        handleError("RAWR! All fields are required");
+        handleError("All fields are required");
         return false;
     }
     
     
     if($("#pass").val() !== $("#pass2").val()) {
-        handleError("RAWR! Passwords do not match");
+        handleError("Passwords do not match");
         return false;
     }
     
@@ -147,17 +147,24 @@ const createChangePassWindow = (csrf) => {
     );
 };
 
-const createAboutPage = (csrf) => {
+const createAboutWindow = (csrf) => {
     ReactDOM.render(
         <AboutWindow csrf={csrf} />,
-        document.querySelector("#about")
+        document.querySelector("#content")
     );
 };
 
 const setup = (csrf) => {
+    const aboutButton = document.querySelector("#aboutButton");
     const loginButton = document.querySelector("#loginButton");
     const signupButton = document.querySelector("#signupButton");
     const changePassButton = document.querySelector("#changePassButton");
+    
+    aboutButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        createAboutWindow(csrf);
+        return false;
+    });
     
     signupButton.addEventListener("click", (e) => {
         e.preventDefault();
@@ -187,12 +194,7 @@ const getToken = () => {
 };
 
 $(document).ready(function() {
-    $("content").ready(function(){
-        getToken();
-    })
-    $("#about").ready(function(){
-        createAboutPage();
-    });
+    getToken();
 });
 
 

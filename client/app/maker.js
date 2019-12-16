@@ -80,7 +80,7 @@ const QuizLog = function(props) {
         if (log.quizWon){
             return (
                 <div key={log._id} className="correctLog">
-                    <h3 className="logSong"> Song: {log.quizSong.replace("&#x27;","'").replace("&amp;","&")} </h3>
+                    <h3 className="logSong"> Song: {log.quizSong.replace("&#x27;","'").replace("&#x27;","'").replace("&amp;","&")} </h3>
                     <h3 className="logCorrect"> Correct Answer: {log.quizCorrect.replace("&#x27;","'").replace("&amp;","&")} </h3>
                     <h3 className="logChoice"> Your Choice: {log.quizChoice.replace("&#x27;","'").replace("&amp;","&")} </h3>
                 </div>
@@ -89,7 +89,7 @@ const QuizLog = function(props) {
         else{
             return (
                 <div key={log._id} className="incorrectLog">
-                    <h3 className="logSong"> Song: {log.quizSong.replace("&#x27;","'").replace("&amp;","&")} </h3>
+                    <h3 className="logSong"> Song: {log.quizSong.replace("&#x27;","'").replace("&#x27;","'").replace("&amp;","&")} </h3>
                     <h3 className="logCorrect"> Correct Answer: {log.quizCorrect.replace("&#x27;","'").replace("&amp;","&")} </h3>
                     <h3 className="logChoice"> Your Choice: {log.quizChoice.replace("&#x27;","'").replace("&amp;","&")} </h3>
                 </div>

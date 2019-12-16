@@ -122,7 +122,7 @@ const ChangePassWindow = (props) => {
 
 const AboutWindow = (props) => {
     return (
-        <div className="mainForm">This is a app for creating logs.</div>
+        <div className="mainForm">This is a quiz game where you are presented with a song and must guess its associated artist.</div>
     );
 };
 

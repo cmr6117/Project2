@@ -208,9 +208,9 @@ $(document).ready(function() {
                 <QuizLog log={data.quizzes} />, document.querySelector("#quizLog")
             );
         });
-        $("#quizzes").animate({height:'hide'},350);
-        $("#timerSection").animate({height:'hide'},350);
-        $("#quizLog").animate({height:'hide'},350);
+        $("#quizzes").animate({height:'toggle'},350);
+        $("#timerSection").animate({height:'toggle'},350);
+        $("#quizLog").animate({height:'toggle'},350);
     });
     setInterval(everySecond, 1000);
 });

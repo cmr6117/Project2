@@ -26,7 +26,7 @@ const handleQuiz = (e) => {
 
     console.dir(data);
     sendAjax('POST', form.action, data, () => {
-        victory = e.target.querySelector("#quizCorrect").value == e.target.querySelector("#quizChoice").value;
+        victory = data.quizChoice == data.quizCorrect;
         handleRecovery();
     });
 

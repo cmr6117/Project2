@@ -41,6 +41,10 @@ const handleRecovery = (color) => {
     };
 
     ReactDOM.render(
+        <Timer />, document.querySelector("#timerSection")
+    );
+
+    ReactDOM.render(
         <QuizRecovery color={color} style={divStyle} />, document.querySelector("#quizzes")
     ); 
 };

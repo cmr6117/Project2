@@ -332,6 +332,7 @@ nav:nth-child(1) {
 
 .quizList{
     padding: 7px;
+    height: 423px;
 }
 
 input[type=text],input[type=password]{
@@ -403,7 +404,6 @@ span#blueText {
     margin: auto;
     margin-bottom: 5px;
     width: 400px;
-    height: 423px;
     display: block;
     padding: 20px;
     padding-bottom: 20px;

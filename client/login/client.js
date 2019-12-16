@@ -120,6 +120,12 @@ const ChangePassWindow = (props) => {
     );
 };
 
+const AboutWindow = (props) => {
+    return (
+        <div>This is a app for creating logs.</div>
+    );
+};
+
 const createLoginWindow = (csrf) => {
     ReactDOM.render(
         <LoginWindow csrf={csrf} />,
@@ -138,6 +144,13 @@ const createChangePassWindow = (csrf) => {
     ReactDOM.render(
         <ChangePassWindow csrf={csrf} />,
         document.querySelector("#content")
+    );
+};
+
+const createAboutPage = (csrf) => {
+    ReactDOM.render(
+        <AboutWindow csrf={csrf} />,
+        document.querySelector("#about")
     );
 };
 
@@ -175,6 +188,9 @@ const getToken = () => {
 
 $(document).ready(function() {
     getToken();
+    $("#about").ready(function() {
+        createAboutPage();
+    });
 });
 
 

@@ -76,7 +76,7 @@ const QuizLog = function(props) {
         );
     }
     
-    const logNodes = props.logs.map(function(log) {
+    const logNodes = props.log.map(function(log) {
         return (
             <div key={log._id} className="log">
                 <h3 className="logSong"> Song: {log.quizSong} </h3>

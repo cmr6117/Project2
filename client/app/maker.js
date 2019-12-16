@@ -182,6 +182,7 @@ const everySecond = () => {
     if(timer < 0){
         recovery = !recovery;
         if(recovery){
+            timer = 5;
             let data = {
                 "quizCorrect": currentArtist,
                 "quizSong": currentSong,
@@ -190,11 +191,10 @@ const everySecond = () => {
             }
             console.dir(data);
             sendAjax('POST', document.querySelector(".quizForm").action, data, () => {});
-            timer = 5;
         }
         else{
-            loadQuizDataFromServer();
             timer = 10;
+            loadQuizDataFromServer();
         }
     }
 };

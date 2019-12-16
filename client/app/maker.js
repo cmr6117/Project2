@@ -32,7 +32,7 @@ const handleQuiz = (e) => {
             victory = e.target.querySelector("#quizCorrect").value == e.target.querySelector("#quizChoice").value;
             ReactDOM.render(
                 <QuizRecovery />, document.querySelector("#quizzes")
-            );
+            ); 
         });
 
     }

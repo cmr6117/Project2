@@ -77,13 +77,24 @@ const QuizLog = function(props) {
     }
     
     const logNodes = props.log.map(function(log) {
-        return (
-            <div key={log._id} className="log">
-                <h3 className="logSong"> Song: {log.quizSong} </h3>
-                <h3 className="logCorrect"> Correct Answer: {log.quizCorrect} </h3>
-                <h3 className="logChoice"> Your Choice: {log.quizChoice} </h3>
-            </div>
-        );
+        if (log.quizWon){
+            return (
+                <div key={log._id} className="correctLog">
+                    <h3 className="logSong"> Song: {log.quizSong} </h3>
+                    <h3 className="logCorrect"> Correct Answer: {log.quizCorrect} </h3>
+                    <h3 className="logChoice"> Your Choice: {log.quizChoice} </h3>
+                </div>
+            );
+        }
+        else{
+            return (
+                <div key={log._id} className="incorrectLog">
+                    <h3 className="logSong"> Song: {log.quizSong} </h3>
+                    <h3 className="logCorrect"> Correct Answer: {log.quizCorrect} </h3>
+                    <h3 className="logChoice"> Your Choice: {log.quizChoice} </h3>
+                </div>
+            );
+        }
     });
     
     return (

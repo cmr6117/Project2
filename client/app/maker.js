@@ -245,7 +245,6 @@ const everySecond = () => {
 
 $(document).ready(function() {
     getToken();
-    loadQuizDataFromServer();
     $("#quizLog").animate({height:'hide'},350);
     $("#switchViews").click(function() {
         viewingLog = !viewingLog;

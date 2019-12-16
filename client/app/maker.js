@@ -112,11 +112,9 @@ const getToken = () => {
 };
 
 const everySecond = () => {
-    sendAjax('GET', '/getQuizzes', null, (data) => {
-        ReactDOM.render(
-            <Timer artistOptions={data.quizzes} />, document.querySelector("#timerSection")
-        );
-    });
+    ReactDOM.render(
+        <Timer />, document.querySelector("#timerSection")
+    );
     if(!viewingLog){
         timer--;
     }

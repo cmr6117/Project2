@@ -390,6 +390,11 @@ span#greenText {
     font-style: italic;
 }
 
+span#blueText {
+    color: rgba(0,0,70,1.0);
+    font-style: italic;
+}
+
 .quizList h1{
     margin-bottom: 50px;
 }

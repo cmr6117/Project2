@@ -33,11 +33,15 @@ const handleQuiz = (e) => {
     return false;
 };
 
-const handleRecovery = () => {
+const handleRecovery = (color) => {
     recovery = true;
     timer = 5;
+    let divStyle = {
+        color: 'color',
+    };
+
     ReactDOM.render(
-        <QuizRecovery />, document.querySelector("#quizzes")
+        <QuizRecovery color={color} style={divStyle} />, document.querySelector("#quizzes")
     ); 
 };
 
@@ -77,7 +81,14 @@ const QuizList = function(props) {
 
 
 const QuizRecovery = function(props) {
-    if(victory){
+    if(victory === "Time's Up"){
+        return (
+            <div className="quizList">
+                <h1><span id="blueText">Time's Up.</span> Get ready for the next question.</h1>
+            </div>
+        );
+    }
+    else if(victory === true){
         return (
             <div className="quizList">
                 <h1><span id="greenText">Correct.</span> Get ready for the next question.</h1>
@@ -87,7 +98,7 @@ const QuizRecovery = function(props) {
     else{
         return (
             <div className="quizList">
-                <h1><span id="greenText">Correct.</span> Get ready for the next question.</h1>
+                <h1><span id="redText">False.</span> Get ready for the next question.</h1>
             </div>
         );
     }

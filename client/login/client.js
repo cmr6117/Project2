@@ -187,8 +187,10 @@ const getToken = () => {
 };
 
 $(document).ready(function() {
-    getToken();
-    $("#about").ready(function() {
+    $("content").ready(function(){
+        getToken();
+    })
+    $("#about").ready(function(){
         createAboutPage();
     });
 });

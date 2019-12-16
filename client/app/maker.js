@@ -7,6 +7,7 @@ let currentSong = "";
 let victory = "";
 let csrfToken;
 
+//Handles POST requests made by the artist selection
 const handleQuiz = (e) => {
     e.preventDefault();
 
@@ -33,12 +34,10 @@ const handleQuiz = (e) => {
     return false;
 };
 
-const handleRecovery = (color) => {
+//When called, renders a recovery period between quizzes
+const handleRecovery = () => {
     recovery = true;
     timer = 5;
-    let divStyle = {
-        color: 'color',
-    };
 
     ReactDOM.render(
         <Timer />, document.querySelector("#timerSection")
@@ -49,6 +48,7 @@ const handleRecovery = (color) => {
     ); 
 };
 
+//Renders a set of buttons for each potential artist
 const QuizList = function(props) {
     if(props.artistOptions.length === 0) {
         return (
@@ -83,7 +83,7 @@ const QuizList = function(props) {
     );
 };
 
-
+//Renders a recovery screen dependant on how the player did on the quiz
 const QuizRecovery = function(props) {
     if(victory === ""){
         return (
@@ -115,7 +115,7 @@ const QuizRecovery = function(props) {
     }
 };
 
-
+//Renders a log of the player's prior quizzes
 const QuizLog = function(props) {
     if(props.log.length === 0) {
         return (
@@ -156,8 +156,7 @@ const QuizLog = function(props) {
     );
 };
 
-
-
+//Renders the current time remaining
 const Timer = function(props) {
     if(timer <= 0){
         return (
@@ -175,6 +174,7 @@ const Timer = function(props) {
     }
 };
 
+//Renders the pause button, which says something different depending on whether the game is paused or not
 const PauseButton = function(props) {
     if(viewingLog){
         return (
@@ -186,12 +186,14 @@ const PauseButton = function(props) {
     );
 };
 
+//Renders a banner ad placeholder
 const Ad = function(props) {
     return (
         <div className="ad">Banner Ad Placeholder</div>
     );        
 };
 
+//Requests the info needed for a quiz then sets it  to be rendered
 const loadQuizDataFromServer = () => {
     if(!viewingLog){
         sendAjax('GET', '/getQuizData', null, (data) => {
@@ -212,12 +214,14 @@ const loadQuizDataFromServer = () => {
     }
 };
 
+//Requests a csrf token
 const getToken = () => {
     sendAjax('GET', '/getToken', null, (result) => {
         csrfToken = result.csrfToken;
     });
 };
 
+//Is called every second. Handles time based events.
 const everySecond = () => {
     ReactDOM.render(
         <Timer />, document.querySelector("#timerSection")
@@ -252,7 +256,7 @@ const everySecond = () => {
     }
 };
 
-
+//Startup function
 $(document).ready(function() {
     getToken();
     $("#quizLog").animate({height:'hide'},350);

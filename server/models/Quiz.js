@@ -7,6 +7,7 @@ let QuizModel = {};
 const convertId = mongoose.Types.ObjectId;
 const setName = (name) => _.escape(name).trim();
 
+//Quiz log structure
 const QuizSchema = new mongoose.Schema({
     quizCorrect: {
         type: String,

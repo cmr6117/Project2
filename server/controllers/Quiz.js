@@ -3,6 +3,7 @@ const models = require('../models');
 const artists = require('./artists.js');
 const Quiz = models.Quiz;
 
+//Interprets music data
 let fileData = artists.Artists;
 let songList = [];
 for(let i = 0; i < fileData.length; i++){
@@ -14,7 +15,7 @@ for(let i = 0; i < fileData.length; i++){
     }
 }
 
-
+//Recovers quiz logs
 const makerPage = (req, res) => {
     Quiz.QuizModel.findByOwner(req.session.account._id, (err, docs) => {
         if (err) {
@@ -26,6 +27,7 @@ const makerPage = (req, res) => {
     });
 };
 
+//Saves a quiz log
 const makeQuiz = (req, res) => {
   console.dir(req.body);
     if (!req.body.quizCorrect || !req.body.quizChoice || !req.body.quizSong){
@@ -61,6 +63,7 @@ const makeQuiz = (req, res) => {
     return quizPromise;
 };
 
+//Requests a log of prior quizzes
 const getQuizzes = (request, response) => {
     const req = request;
     const res = response;
@@ -75,6 +78,7 @@ const getQuizzes = (request, response) => {
     });
 };
 
+//Requests data needed for a new quiz
 const getQuizData = (request, response) => {
     const res = response;
     let artistChoice = [...fileData];

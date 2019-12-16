@@ -1,3 +1,4 @@
+//Handles Login Submission
 const handleLogin = (e) => {
     e.preventDefault();
     
@@ -15,6 +16,7 @@ const handleLogin = (e) => {
     return false;
 };
 
+//Handles Signup Submission
 const handleSignup = (e) => {
     e.preventDefault();
     
@@ -36,6 +38,7 @@ const handleSignup = (e) => {
     return false;
 };
 
+//Handles Password Change Submission
 const handleChangePass = (e) => {
     e.preventDefault();
     
@@ -57,6 +60,7 @@ const handleChangePass = (e) => {
     return false;
 };
 
+//Renders Login Window
 const LoginWindow = (props) => {
     return (
         <form id="loginForm" 
@@ -76,6 +80,7 @@ const LoginWindow = (props) => {
     );
 };
 
+//Renders Signup Window
 const SignupWindow = (props) => {
     return (
         <form id="signupForm" 
@@ -97,6 +102,7 @@ const SignupWindow = (props) => {
     );
 };
 
+//Renders Password Change Window
 const ChangePassWindow = (props) => {
     return (
         <form id="changePassForm" 
@@ -120,12 +126,14 @@ const ChangePassWindow = (props) => {
     );
 };
 
+//Renders About Window
 const AboutWindow = (props) => {
     return (
         <div className="mainForm">This is a quiz game where you are presented with a song and must guess its associated artist.</div>
     );
 };
 
+//Sets Login Window up to be rendered
 const createLoginWindow = (csrf) => {
     ReactDOM.render(
         <LoginWindow csrf={csrf} />,
@@ -133,6 +141,7 @@ const createLoginWindow = (csrf) => {
     );
 };
 
+//Sets Signup Window up to be rendered
 const createSignupWindow = (csrf) => {
     ReactDOM.render(
         <SignupWindow csrf={csrf} />,
@@ -140,6 +149,7 @@ const createSignupWindow = (csrf) => {
     );
 };
 
+//Sets Password Change Window up to be rendered
 const createChangePassWindow = (csrf) => {
     ReactDOM.render(
         <ChangePassWindow csrf={csrf} />,
@@ -147,6 +157,7 @@ const createChangePassWindow = (csrf) => {
     );
 };
 
+//Sets About Window up to be rendered
 const createAboutWindow = (csrf) => {
     ReactDOM.render(
         <AboutWindow csrf={csrf} />,
@@ -154,6 +165,7 @@ const createAboutWindow = (csrf) => {
     );
 };
 
+//Startup function
 const setup = (csrf) => {
     const aboutButton = document.querySelector("#aboutButton");
     const loginButton = document.querySelector("#loginButton");

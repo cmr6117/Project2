@@ -1,3 +1,4 @@
+//Music  Data
 const artists = [
    {
       "quiz":"Weird Al Yankovic",

@@ -31,6 +31,8 @@ const handleQuiz = (e) => {
     return false;
 };
 
+
+
 const QuizList = function(props) {
     if(props.artistOptions.length === 0) {
         return (
@@ -64,6 +66,34 @@ const QuizList = function(props) {
         </div>
     );
 };
+
+const QuizLog = function(props) {
+    if(props.log.length === 0) {
+        return (
+            <div className="logList">
+                <h3 className="emptyLog">No quizzes answered yet</h3>
+            </div>
+        );
+    }
+    
+    const logNodes = props.logs.map(function(log) {
+        return (
+            <div key={log._id} className="log">
+                <h3 className="logSong"> Song: {log.quizSong} </h3>
+                <h3 className="logCorrect"> Correct Answer: {log.quizCorrect} </h3>
+                <h3 className="logChoice"> Your Choice: {log.quizChoice} </h3>
+            </div>
+        );
+    });
+    
+    return (
+        <div className="logList">
+            {logNodes}
+        </div>
+    );
+};
+
+
 
 const Timer = function(props) {
     return (
@@ -161,6 +191,11 @@ $(document).ready(function() {
     loadQuizDataFromServer();
     $("#switchViews").click(function() {
         viewingLog = !viewingLog;
+        sendAjax('GET', '/getQuizzes', null, (data) => {
+            ReactDOM.render(
+                <QuizLog log={data.quizzes} />, document.querySelector("#quizLog")
+            );
+        });
     });
     setInterval(everySecond, 1000);
 });

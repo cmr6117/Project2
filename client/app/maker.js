@@ -44,7 +44,7 @@ const handleRecovery = () => {
     );
 
     ReactDOM.render(
-        <QuizRecovery color={color} style={divStyle} />, document.querySelector("#quizzes")
+        <QuizRecovery style={divStyle} />, document.querySelector("#quizzes")
     ); 
 };
 

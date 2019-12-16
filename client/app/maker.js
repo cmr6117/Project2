@@ -2,7 +2,7 @@ let timer = 5;
 let recovery = true;
 let viewingLog = false;
 let backgroundColor = "linear-gradient(rgb(125, 125, 150), rgba(125,125,150,0))";
-let theCurrentArtist = "";
+let currentArtist = "";
 let currentSong = "";
 let csrfToken;
 
@@ -32,8 +32,6 @@ const handleQuiz = (e) => {
 };
 
 const QuizList = function(props) {
-    theCurrentArtist = props.correctArtist;
-    currentSong = props.song;
     if(props.artistOptions.length === 0) {
         return (
             <div className="quizList" style="backgroundImage:{backgroundColor}">
@@ -91,6 +89,9 @@ const loadQuizDataFromServer = () => {
     if(!viewingLog){
         sendAjax('GET', '/getQuizData', null, (data) => {
             ReactDOM.render(
+                console.dir(data);
+                currentArtist = data.correctArtist;
+                currentSong = data.song;
                 <QuizList artistOptions={data.artistOptions} song={data.song} correct={data.correctArtist}/>,
               document.querySelector("#quizzes")
             );
@@ -124,7 +125,7 @@ const everySecond = () => {
         recovery = !recovery;
         if(recovery){
             let data = {
-                "quizCorrect": theCurrentArtist,
+                "quizCorrect": currentArtist,
                 "quizSong": currentSong,
                 "quizChoice": "Time's Up",
                 "_csrf": csrfToken

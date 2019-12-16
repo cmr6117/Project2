@@ -208,7 +208,7 @@ $(document).ready(function() {
         viewingLog = !viewingLog;
         sendAjax('GET', '/getQuizzes', null, (data) => {
             ReactDOM.render(
-                <QuizLog log={data.quizzes} />, document.querySelector("#quizLog")
+                <QuizLog log={data.quizzes.reverse()} />, document.querySelector("#quizLog")
             );
         });
         $("#quizzes").animate({height:'toggle'},350);

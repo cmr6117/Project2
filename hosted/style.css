@@ -415,6 +415,9 @@ span#redText {
 }
 
 .logHeader{
+    margin-top: 10px;
     background-image: linear-gradient(rgb(150, 150, 150), rgb(175, 175, 175), rgb(175, 175, 185), rgba(150,150,150,0));
+    font-size: 20px;
+    font-weight: bold;
 }
 

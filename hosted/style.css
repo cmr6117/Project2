@@ -432,3 +432,8 @@ span#blueText {
     font-weight: bold;
 }
 
+.ad{
+    padding-top: 200px;
+    padding-bottom: 200px;
+    border: 2px "aliceblue";
+}

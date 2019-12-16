@@ -231,6 +231,7 @@ $(document).ready(function() {
         $("#timerSection").animate({height:'toggle'},350);
         $("#quizLog").animate({height:'toggle'},350);
     });
+    handleRecovery();
     setInterval(everySecond, 1000);
 });
 

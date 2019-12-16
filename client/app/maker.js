@@ -81,7 +81,14 @@ const QuizList = function(props) {
 
 
 const QuizRecovery = function(props) {
-    if(victory === "Time's Up"){
+    if(victory === ""){
+        return (
+            <div className="quizList">
+                <h1>Get ready for the next question.</h1>
+            </div>
+        );
+    }
+    else if(victory === "Time's Up"){
         return (
             <div className="quizList">
                 <h1><span id="blueText">Time's Up.</span> Get ready for the next question.</h1>
@@ -148,11 +155,20 @@ const QuizLog = function(props) {
 
 
 const Timer = function(props) {
-    return (
-        <div className="timerDiv">
-            {timer}
-        </div>
-    );
+    if(timer > 0){
+        return (
+            <div className="timerDiv">
+                -
+            </div>
+        );
+    }
+    else{
+        return (
+            <div className="timerDiv">
+                {timer}
+            </div>
+        );
+    }
 };
 
 const PauseButton = function(props) {

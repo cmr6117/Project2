@@ -9,6 +9,8 @@ let csrfToken;
 const handleQuiz = (e) => {
     e.preventDefault();
   
+    recovery = true;
+    timer = 5;
     //console.dir(e.target.id);
     
     $("#quizMessage").animate({width:'hide'},350);
@@ -24,9 +26,7 @@ const handleQuiz = (e) => {
     }
   
     console.dir(data);
-    sendAjax('POST', form.action, data, () => {
-        loadQuizDataFromServer();
-    });
+    sendAjax('POST', form.action, data, () => {});
     
     return false;
 };

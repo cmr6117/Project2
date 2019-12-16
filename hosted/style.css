@@ -332,7 +332,7 @@ nav:nth-child(1) {
 
 .quizList{
     padding: 7px;
-    height: 423px;
+    min-height: 423px;
 }
 
 input[type=text],input[type=password]{

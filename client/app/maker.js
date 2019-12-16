@@ -158,7 +158,7 @@ const Timer = function(props) {
     if(timer <= 0){
         return (
             <div className="timerDiv">
-                -
+                10
             </div>
         );
     }

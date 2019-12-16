@@ -4,6 +4,7 @@ let viewingLog = false;
 let backgroundColor = "linear-gradient(rgb(125, 125, 150), rgba(125,125,150,0))";
 let currentArtist = "";
 let currentSong = "";
+let victory = false;
 let csrfToken;
 
 const handleQuiz = (e) => {
@@ -12,6 +13,11 @@ const handleQuiz = (e) => {
 
         recovery = true;
         timer = 5;
+        victory = e.target.querySelector("#quizCorrect").value == e.target.querySelector("#quizChoice").value;
+        ReactDOM.render(
+            <QuizRecovery />, document.querySelector("#quizzes")
+        );
+        
         //console.dir(e.target.id);
 
         $("#quizMessage").animate({width:'hide'},350);
@@ -26,8 +32,6 @@ const handleQuiz = (e) => {
           _csrf: csrfToken,
         }
         
-        
-
         console.dir(data);
         sendAjax('POST', form.action, data, () => {});
 
@@ -70,6 +74,25 @@ const QuizList = function(props) {
         </div>
     );
 };
+
+
+const QuizRecovery = function(props) {
+    if(victory){
+        return (
+            <div className="quizList">
+                <h1><span id="greenText">Correct.</span> Get ready for the next question.</h1>
+            </div>
+        );
+    }
+    else{
+        return (
+            <div className="quizList">
+                <h1><span id="greenText">Correct.</span> Get ready for the next question.</h1>
+            </div>
+        );
+    }
+};
+
 
 const QuizLog = function(props) {
     if(props.log.length === 0) {
@@ -130,18 +153,6 @@ const PauseButton = function(props) {
     return (
         <a>Pause</a>
     );
-};
-
-
-
-const loadQuizzesFromServer = () => {
-    //sendAjax('GET', '/getQuizzes', null, (data) => {
-    //  console.log('quiz data', data.quizzes);
-    //    ReactDOM.render(
-    //        <QuizList artistOptions={data.quizzes} />, document.querySelector("#quizzes")
-    //    );
-    //  console.dir('finished loading');
-    //});
 };
 
 const loadQuizDataFromServer = () => {

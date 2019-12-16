@@ -385,6 +385,11 @@ span#redText {
     font-style: italic;
 }
 
+span#greenText {
+    color: rgba(0,70,0,1.0);
+    font-style: italic;
+}
+
 .quizList h1{
     margin-bottom: 50px;
 }

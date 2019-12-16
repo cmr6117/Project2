@@ -186,6 +186,12 @@ const PauseButton = function(props) {
     );
 };
 
+const Ad = function(props) {
+    return (
+        <img src="/assets/img/bannerAd.jpg" alt="Banner Ad Placeholder"/>
+    );        
+};
+
 const loadQuizDataFromServer = () => {
     if(!viewingLog){
         sendAjax('GET', '/getQuizData', null, (data) => {
@@ -261,6 +267,12 @@ $(document).ready(function() {
         $("#timerSection").animate({height:'toggle'},350);
         $("#quizLog").animate({height:'toggle'},350);
     });
+    ReactDOM.render(
+        <Ad />, document.querySelector("#ad1")
+    );
+    ReactDOM.render(
+        <Ad />, document.querySelector("#ad2")
+    );
     handleRecovery();
     setInterval(everySecond, 1000);
 });
